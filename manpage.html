@@ -1,250 +1,771 @@
-<!DOCTYPE html>
-<HTML>
-<HEAD>
-    <TITLE>pdfpc man page</TITLE>
-    <META charset="utf-8" />
-</HEAD>
-<BODY>
-<PRE>
-<!-- Manpage converted by man2html 3.0.1 -->
+<!-- Creator     : groff version 1.22.3 -->
+<!-- CreationDate: Thu Nov  5 10:47:11 2015 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<style type="text/css">
+       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       h1      { text-align: center }
+</style>
+<title>pdfpc</title>
 
-SYNOPSIS
-       pdfpc [options] PDF-file
+</head>
+<body>
 
+<h1 align="center">pdfpc</h1>
 
-DESCRIPTION
-       pdfpc is a GTK based presentation viewer application which uses Keynote like multi-monitor output to provide meta information to the speaker during the presenta‐
-       tion.  It is able to show a normal presentation window on one screen, while showing a more sophisticated overview on the other one providing information  like  a
-       picture  of  the  next slide, as well as the left over time till the end of the presentation.  The input files processed by pdfpc are PDF documents, which can be
-       created using nearly any of today's presentation software.
 
-       To run pdfppc, simply type
 
-              pdfpc file.pdf
+<h2>NAME
+<a name="NAME"></a>
+</h2>
 
-       By default the presenter view appears in the primary monitor and the presentation view in the second monitor (provided you have two monitors).  If  you  want  to
-       switch displays, start with the -s option (see below).
 
+<p style="margin-left:11%; margin-top: 1em">pdfpc &minus;
+PDF presenter console with multi-monitor support</p>
 
-OPTIONS
-       -d, --duration=N
-              Duration in minutes of the presentation used for timer display. If not given or if a value of 0 is specified, the clock just measures the time in the pre‐
-              sentation.
+<h2>SYNOPSIS
+<a name="SYNOPSIS"></a>
+</h2>
 
-       -e, --end-time=T
-              End time of the presentation. (Format: HH:MM (24h))
 
-       -l, --last-minutes=N
-              Time in minutes, from which on the timer changes its color. (Default 5 minutes)
+<p style="margin-left:11%; margin-top: 1em"><b>pdfpc</b>
+[options] PDF-file</p>
 
-       -t, --start-time=T
-              Start time of the presentation to be used as a countdown. (Format: HH:MM (24h))
+<h2>DESCRIPTION
+<a name="DESCRIPTION"></a>
+</h2>
 
-       -u, --current-size=N
-              Percentage of the presenter screen to be used for the current slide.  (Default 60)
 
-       -o, --overview-min-size=N
-              Minimum width for the overview miniatures, in pixels. (Default 150)
+<p style="margin-left:11%; margin-top: 1em">pdfpc is a
+GTK-based presentation viewer for GNU/Linux which uses
+Keynote-like multi-monitor output to provide meta
+information to the speaker during the presentation. It is
+able to show a normal presentation window on one screen
+while showing a more sophisticated overview on the other
+one, providing information like a picture of the next slide,
+as well as the time left in the presentation. pdfpc
+processes PDF documents, which can be created using nearly
+all modern presentation software.</p>
 
-       -s, --switch-screens
-              Switch the presentation and the presenter screen.
+<p style="margin-left:11%; margin-top: 1em">To run pdfpc,
+simply type</p>
 
-       -c, --disable-cache
-              Disable caching and pre-rendering of slides to save memory at the cost of speed.
+<p style="margin-left:22%; margin-top: 1em">pdfpc
+file.pdf</p>
 
-       -z, --disable-compression
-              Disable the compression of slide images to trade memory consumption for speed.  (Avg.  factor 30)
+<p style="margin-left:11%; margin-top: 1em">By default the
+presenter view appears in the primary monitor and the
+presentation view in the second monitor (provided you have
+two monitors). If you want to switch displays, start with
+the &minus;s option (see below).</p>
 
-       -b, --black-on-end
-              Add an additional black slide at the end of the presentation
+<h2>OPTIONS
+<a name="OPTIONS"></a>
+</h2>
 
-       -S, --single-screen
-       -h, --help
-              Shows the help
 
+<p style="margin-left:11%; margin-top: 1em"><b>&minus;d,
+&minus;&minus;duration</b><i>=N</i></p>
 
-KEYBINDINGS
-       These are the default keybindings for pdfpc:
+<p style="margin-left:22%;">Duration in minutes of the
+presentation used for timer display. If not given or if a
+value of 0 is specified, the clock just measures the time in
+the presentation.</p>
 
-       Right cursor key / Page down / Return / Space / Left mouse button
-              Go forward one slide
+<p style="margin-left:11%;"><b>&minus;e,
+&minus;&minus;end&minus;time</b><i>=T</i></p>
 
-       Shift + Right cursor key / Page down / Return / Space / Left mouse button / Mouse wheel down or right
-              Go forward 10 slides
+<p style="margin-left:22%;">End time of the presentation.
+(Format: HH:MM (24h))</p>
 
-       Down cursor key
-              Go forward one user slide (see Overlays below)
+<p style="margin-left:11%;"><b>&minus;l,
+&minus;&minus;last&minus;minutes</b><i>=N</i></p>
 
-       Left cursor key / Page up / Right mouse button / Mouse wheel up or left
-              Go back one slide
+<p style="margin-left:22%;">Time in minutes, from which on
+the timer changes its color. (Default 5 minutes)</p>
 
-       Shift + Left cursor key / Page up / Right mouse button
-              Go back 10 slides
+<p style="margin-left:11%;"><b>&minus;t,
+&minus;&minus;start&minus;time</b><i>=T</i></p>
 
-       Up cursor key
-              Go back one "user slide" (see Overlays below)
+<p style="margin-left:22%;">Start time of the presentation
+to be used as a countdown. (Format: HH:MM (24h))</p>
 
-       Home   Go to the first slide
+<p style="margin-left:11%;"><b>&minus;C,
+&minus;&minus;time&minus;of&minus;day</b></p>
 
-       End    Go to the last slide
+<p style="margin-left:22%;">Display the time of the day</p>
 
-       Backspace
-              Go back in history. Note that history is defined by "jump" commands, not by normal slide movement.
+<p style="margin-left:11%;"><b>&minus;u,
+&minus;&minus;current&minus;size</b><i>=N</i></p>
 
-       Tab / Middle mouse button
-              Overview mode
+<p style="margin-left:22%;">Percentage of the presenter
+screen to be used for the current slide. (Default 60)</p>
 
-       g      Input a slide number to jump to
+<p style="margin-left:11%;"><b>&minus;h,
+&minus;&minus;current&minus;height</b><i>=N</i></p>
 
-       Escape / q
-              Exit pdfpc
+<p style="margin-left:22%;">Percentage of the height of the
+presenter screen to be used for the current slide. (Default
+80)</p>
 
-       b      Turn off the presentation view (i.e.  fill it with a black color)
+<p style="margin-left:11%;"><b>&minus;H,
+&minus;&minus;next&minus;height</b><i>=N</i></p>
 
-       n      Edit note for current slide
+<p style="margin-left:22%;">Percentage of the height of the
+presenter screen to be used for the next slide. (Default
+70)</p>
 
-       f      Freeze the current presentation display (the presenter display is still fully active)
+<p style="margin-left:11%;"><b>&minus;o,
+&minus;&minus;overview&minus;min&minus;size</b><i>=N</i></p>
 
-       o      Toggle the overlay flag for one particular slide (see Overlays below)
+<p style="margin-left:22%;">Minimum width for the overview
+miniatures, in pixels. (Default 150)</p>
 
-       p      Pause timer
+<p style="margin-left:11%;"><b>&minus;s,
+&minus;&minus;switch&minus;screens</b></p>
 
-       r      Reset presentation (reset timer and go back to first slide)
+<p style="margin-left:22%;">Switch the presentation and the
+presenter screen.</p>
 
-   Cache compression
-       The  pre-rendered  and  cached slides can be compressed in memory to save up some memory.  Without compression a set of about 100 pdf pages can easily grow up to
-       about 1.5gb size.  Netbooks with only 1gb of memory would swap themselves to death if pre-rendering is enabled in such a situation.  The compression  is  enabled
-       by  default  as  it  does not harm rendering speed in a noticeable way on most systems.  It does however slow down prerendering by about a factor of two.  If you
-       have got enough memory and want to ensure the fastest possible pre-rendering you can disable slide compression by using the -z switch. But be  warned  using  the
-       uncompressed pre-rendering storage will use about 30 times the memory the new compressed storage utilizes (aka the 1.5gb become about 50mb)
+<p style="margin-left:11%;"><b>&minus;c,
+&minus;&minus;disable&minus;cache</b></p>
 
+<p style="margin-left:22%;">Disable caching and
+pre-rendering of slides to save memory at the cost of
+speed.</p>
 
-   Timer
-       If  a  duration is given (-d option), the timer will show a countdown with the given parameters.  If no duration is specified (or if a value of 0 is given to the
-       -d option), the timer will show how much time has been spent.  The duration is stored automatically, so you do not need to repeat it for every invocation.
+<p style="margin-left:11%;"><b>&minus;z,
+&minus;&minus;disable&minus;compression</b></p>
 
-       The timer is started if you are navigating away from the first page for the first time.  This feature is quite useful as you may want to show  the  titlepage  of
-       your  presentation  while people are still entering the room and the presentation hasn't really begun yet.  If you want to start over you can use the r key which
-       will make the presenter reset the timer.
+<p style="margin-left:22%;">Disable the compression of
+slide images to trade memory consumption for speed. (Avg.
+factor 30)</p>
 
-       If a duration is given, at the moment the timer reaches the defined last-minutes value it will change color to indicate your talk is nearing its end.  As soon as
-       the  timer  reaches  the zero mark (00:00:00) it will turn red and count further down showing a negative time, to provide information on how many minutes you are
-       overtime.
+<p style="margin-left:11%;"><b>&minus;b,
+&minus;&minus;black&minus;on&minus;end</b></p>
 
+<p style="margin-left:22%;">Add an additional black slide
+at the end of the presentation</p>
 
-   Notes
-       Textual notes can be displayed for each slide.  While in the presentation, pressing n will allow you to take notes for the screen.  To go out  of  editing  mode,
-       press the Escape key.  Note that while editing a note the keybindings stop working, i.e.  you are not able to change slides.
+<p style="margin-left:11%;"><b>&minus;S,
+&minus;&minus;single&minus;screen</b></p>
 
-       The notes are stored in the given file in a plain text format, easy to edit also from outside the program.  See the section about the pdfpc format below.
+<p style="margin-left:22%;">Force to use only one
+screen</p>
 
+<p style="margin-left:11%;"><b>&minus;L,
+&minus;&minus;list&minus;actions</b></p>
 
-   Overview mode
-       Pressing  tab  you  can enter the overview mode, where miniatures for the slides are shown.  You can select one slide to jump to with the mouse or with the arrow
-       keys.  You can also define overlays and the end slide (see next sections) in this mode.
+<p style="margin-left:22%;">List actions supported in the
+config file(s)</p>
 
+<p style="margin-left:11%;"><b>&minus;w,
+&minus;&minus;windowed</b></p>
 
-   Overlays
-       Many slide preparation systems allow for overlays, i.e.  sets of slides that are logically grouped together as a single, changing slide.  Examples  include  enu‐
-       merations  where the single items are displayed one after another or rough "animations", where parts of a picture change from slide to slide.  Pdf Presenter Con‐
-       sole includes facilities for dealing with such overlays.
+<p style="margin-left:22%;">Run in windowed mode</p>
 
-       In this description, we will differentiate between slides (i.e.  pages in the pdf document) and "user slides", that are the logical slides.  The standard forward
-       movement  command (page down, enter, etc.) moves through one slide at a time, as expected.  That means that every step in the overlay is traversed.  The backward
-       movement command works differently depending if the current and previous slides are part of an overlay:
+<p style="margin-left:11%;"><b>&minus;Z,
+&minus;&minus;size</b></p>
 
+<p style="margin-left:22%;">Size of the presenter console
+in width:height format (forces windowed mode)</p>
 
-       · If the current slide is part of an overlay we just jump to the previous slide.  That means that we are in the middle of an overlay  we  can  jump  forward  and
-         backward through the single steps of it
+<p style="margin-left:11%;"><b>&minus;n,
+&minus;&minus;notes</b><i>=P</i></p>
 
-       · If  the  current slide is not part of an overlay (or if it is the first one), but the previous slides are, we jump to the previous user slide.  This means that
-         when going back in the presentation you do not have to go through every step of the overlay, Pdf Presenter Console just shows the first slide of the each over‐
-         lay.  As you normally only go back in a presentation when looking for a concrete slide, this is more convenient.
+<p style="margin-left:22%;">Position of notes on the PDF
+page. Position can be either left, right, top or bottom
+(Default none)</p>
 
-       The  up  and  down  cursor  keys work on a user slide basis.  You can use them to skip the rest of an overlay or to jump to the previous user slide, ignoring the
-       state of the current slide.
+<p style="margin-left:11%;"><b>&minus;h,
+&minus;&minus;help</b></p>
 
-   pdfpc Files
-       The notes and other additional information are stored in a file with the extension "pdfpc".  When invoking Pdf Presenter Console with a non pdfpc file, it  auto‐
-       matically  checks if there exists such a file and in this case loads the additional information.  This means that you normally do not have to deal with this kind
-       of files explicitly.
+<p style="margin-left:22%;">Shows the help</p>
 
-       There are however cases where you may want to edit the files manually.  The most typical case is if you add or remove some slides after you have edited notes  or
-       defined  overlays.  It may be quicker to edit the pdfpc file than to re-enter the whole information.  Future versions may include external tools for dealing with
-       this case automatically.
+<h2>KEYBINDINGS
+<a name="KEYBINDINGS"></a>
+</h2>
 
-       The files are plain-text files that should be fairly self-explanatory.  A couple of things to note:
 
-       · The slide numbers of the notes refer to user slides
+<p style="margin-left:11%; margin-top: 1em">These are the
+default keybindings for pdfpc: <b><br>
+Right cursor key / Page down / Return / Space / Left mouse
+button</b></p>
 
-       · The [notes] sections must be the last one in the file
+<p style="margin-left:22%;">Go forward one slide</p>
 
-       · For the programmers out there: slide indexes start at 1
+<p style="margin-left:11%;"><b>Shift + Right cursor key /
+Page down / Return / Space / Left mouse <br>
+button / Mouse wheel down or right</b></p>
 
-CONFIG FILE
-       The main configuration file for pdfpc is located in /usr/local/etc/pdfpcrc.  Additionally, $HOME/.pdfpcrc is  also  read,  if  present.  Following  commands  are
-       aceepted
+<p style="margin-left:22%;">Go forward 10 slides</p>
 
-       bind &lt;key&gt; &lt;func&gt;
-              Bind a key to a function
+<p style="margin-left:11%;"><b>Down cursor key</b></p>
 
-       unbind &lt;key&gt;
-              Unbinds the given key
+<p style="margin-left:22%;">Go forward one user slide (see
+<b>Overlays</b> below)</p>
 
-       unbind_all
-              Unbinds all the keybindings
+<p style="margin-left:11%;"><b>Left cursor key / Page up /
+Right mouse button / Mouse wheel up or left</b></p>
 
-       mouse &lt;button&gt; &lt;func&gt;
-              Binds a mouse button to a function
+<p style="margin-left:22%;">Go back one slide</p>
 
-       unmouse &lt;button&gt;
-              Unbinds a mouse button
+<p style="margin-left:11%;"><b>Shift + Left cursor key /
+Page up / Right mouse button</b></p>
 
-       unmouse_all
-              Unbinds all the mouse bindings
+<p style="margin-left:22%;">Go back 10 slides</p>
 
-       switch-screens
-              Switches screens, in the same way as the command line parameter with the same name.
+<p style="margin-left:11%;"><b>Up cursor key</b></p>
 
-       Key names can be obtained with the help of the xev utility. Note that names are case sensitive. Modifiers can be specified in the form &lt;mod&gt;+&lt;key&gt; where &lt;mod&gt; is
-       one of S (for shift), C (for control) and A/M (for Alt/Meta). E.g.
+<p style="margin-left:22%;">Go back one &quot;user
+slide&quot; (see <b>Overlays</b> below)</p>
 
-       bind S+Next    next10
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="6%">
 
-       A list of all possible functions can be obtained via the -L command line option.
 
-       Some configuration files for commonly used devices (wireless presenters, bluetooth headsets, ...)   are  available  ⟨http://pdfpc.github.com/pdfpc#configs⟩.   If
-       your device is not yet supported and you generated a working config file, please contribute it (see contact information below).
+<p><b>Home</b></p></td>
+<td width="5%"></td>
+<td width="32%">
 
-              \usepackage{hyperref}
-              \href{run:&lt;movie file&gt;}{&lt;placeholder content&gt;}
 
-       The movie will playback in the area taken by the placeholder content.  Using a frame of the movie will ensure the correct aspect ratio.
+<p>Go to the first slide</p></td>
+<td width="46%">
+</td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="6%">
 
 
-BUGS
-       There may be a small memory leak in the program. I am trying to solve it. It should not be too important for up to some hundreds of slides.
+<p><b>End</b></p></td>
+<td width="5%"></td>
+<td width="32%">
 
-       Other bugs can be reported at the issue tracker ⟨https://github.com/pdfpc/pdfpc/issues⟩.
 
+<p>Go to the last slide</p></td>
+<td width="46%">
+</td></tr>
+</table>
 
-CONTACT
-       Comments and suggestion are welcome. Write an email to David Vilar ⟨mailto:davvil@gmail.com⟩.
+<p style="margin-left:11%;"><b>Backspace</b></p>
 
+<p style="margin-left:22%;">Go back in history. Note that
+history is defined by &quot;jump&quot; commands, not by
+normal slide movement.</p>
 
-SEE ALSO
-       pdfpc 4.0 is a fork of pdfpc mainly developed by davvil at online ⟨https://github.com/davvil/pdfpc⟩.
+<p style="margin-left:11%;"><b>Tab / Middle mouse
+button</b></p>
 
-       pdfpc is a fork of Pdf Presenter Console, available online ⟨https://github.com/jakobwesthoff/Pdf-Presenter-Console⟩.
+<p style="margin-left:22%;">Overview mode</p>
 
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
 
 
-                                                                                May 2015                                                                        <B>pdfpc(1)</B>
-</PRE>
-<HR>
-<ADDRESS>
-Man(1) output converted with
-<a href="http://www.oac.uci.edu/indiv/ehood/man2html.html">man2html</a>
-</ADDRESS>
-</BODY>
-</HTML>
+<p><b>g</b></p></td>
+<td width="10%"></td>
+<td width="47%">
+
+
+<p>Input a slide number to jump to</p></td>
+<td width="31%">
+</td></tr>
+</table>
+
+<p style="margin-left:11%;"><b>Plus / Equal / KP_Add /
+Bracket Left</b></p>
+
+<p style="margin-left:22%;">Increase Notes Font Size</p>
+
+<p style="margin-left:11%;"><b>Minus / KP_Substract /
+Bracket Right</b></p>
+
+<p style="margin-left:22%;">Decrease Notes Font Size</p>
+
+<p style="margin-left:11%;"><b>Escape / q</b></p>
+
+<p style="margin-left:22%;">Exit pdfpc</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>b</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Turn off the presentation view (i.e. fill it with a
+black color)</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>n</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Edit note for current slide</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>f</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Freeze the current presentation display (the presenter
+display is still fully active)</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>o</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Toggle the overlay flag for one particular slide (see
+Overlays below)</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>p</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Pause timer</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>r</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Reset presentation (reset timer and go back to first
+slide)</p> </td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>e</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Define end slide</p></td></tr>
+</table>
+
+<p style="margin-left:11%; margin-top: 1em">See <b>CONFIG
+FILE</b> below if you want to customize the keybindings.</p>
+
+<h2>FEATURES
+<a name="FEATURES"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>Caching /
+Pre-rendering</b> <br>
+To allow fast changes between the different slides of the
+presentation the PDF pages are pre-rendered to memory. The
+progress bar on the bottom of the presenter screen indicates
+how many percent of the slides have been pre-rendered
+already. During the initial rendering phase this will slow
+down slide changes, as most CPU power is used for the
+rendering process in the background. After the cache is
+fully primed however the changing of slides should be much
+faster, as with normal PDF viewers.</p>
+
+<p style="margin-left:11%; margin-top: 1em">As the
+pre-rendering takes a lot of memory it can be disabled using
+the &minus;&minus;disable&minus;cache switch at the cost of
+speed.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Cache
+compression</b> <br>
+The pre-rendered and cached slides can be compressed in
+memory to save up some memory. Without compression a set of
+about 100 PDF pages can easily grow up to about 1.5 GB size.
+Netbooks with only 1 GB of memory would swap themselves to
+death if pre-rendering is enabled in such a situation. The
+compression is enabled by default as it does not harm
+rendering speed in a noticeable way on most systems. It does
+however slow down pre-rendering by about a factor of two. If
+you have got enough memory and want to ensure the fastest
+possible pre-rendering you can disable slide compression by
+using the &minus;z switch. But be warned using the
+uncompressed pre-rendering storage will use about 30 times
+the memory the new compressed storage utilizes (e.g. 50 MB
+will become about 1.5 GB).</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Timer</b>
+<br>
+If a duration is given (&minus;d option), the timer will
+show a countdown with the given parameters. If no duration
+is specified (or if a value of 0 is given to the &minus;d
+option), the timer will show how much time has been spent.
+The duration is stored automatically, so you do not need to
+repeat it for every invocation.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The timer is
+started if you are navigating away from the first page for
+the first time. This feature is quite useful as you may want
+to show the title page of your presentation while people are
+still entering the room and the presentation has not really
+begun yet. If you want to start over you can use the 'r' key
+which will make the presenter reset the timer.</p>
+
+<p style="margin-left:11%; margin-top: 1em">If a duration
+is given, at the moment the timer reaches the defined
+last-minutes value it will change color to indicate your
+talk is nearing its end. As soon as the timer reaches the
+zero mark (00:00:00) it will turn red and count further down
+showing a negative time, to provide information on how many
+minutes you are overtime.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Notes</b>
+<br>
+Textual notes can be displayed for each slide. While in the
+presentation, pressing 'n' will allow you to take notes for
+the screen. To go out of editing mode, press the Escape key.
+Note that while editing a note the keybindings stop working,
+i.e. you are not able to change slides.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The notes are
+stored in the given file in a plain text format, easy to
+edit also from outside the program. See the section about
+the pdfpc format below.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Overview
+mode</b> <br>
+Pressing tab you can enter the overview mode, where
+miniatures for the slides are shown. You can select one
+slide to jump to with the mouse or with the arrow keys. You
+can also define overlays and the end slide (see next
+sections) in this mode.</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>Overlays</b>
+<br>
+Many slide preparation systems allow for overlays, i.e. sets
+of slides that are logically grouped together as a single,
+changing slide. Examples include enumerations where the
+single items are displayed one after another or rough
+&quot;animations&quot;, where parts of a picture change from
+slide to slide. Pdfpc includes facilities for dealing with
+such overlays.</p>
+
+<p style="margin-left:11%; margin-top: 1em">In this
+description, we will differentiate between slides (i.e.
+pages in the PDF document) and &quot;user slides&quot;, that
+are the logical slides. The standard forward movement
+command (page down, enter, etc.) moves through one slide at
+a time, as expected. That means that every step in the
+overlay is traversed. The backward movement command works
+differently depending if the current and previous slides are
+part of an overlay:</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p style="margin-top: 1em">&bull;</p></td>
+<td width="2%"></td>
+<td width="86%">
+
+
+<p style="margin-top: 1em">If the current slide is part of
+an overlay we just jump to the previous slide. That means
+that we are in the middle of an overlay we can jump forward
+and backward through the single steps of it</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p>&bull;</p></td>
+<td width="2%"></td>
+<td width="86%">
+
+
+<p>If the current slide is not part of an overlay (or if it
+is the first one), but the previous slides are, we jump to
+the previous user slide. This means that when going back in
+the presentation you do not have to go through every step of
+the overlay, pdfpc just shows the first slide of the each
+overlay. As you normally only go back in a presentation when
+looking for a concrete slide, this is more convenient.</p></td></tr>
+</table>
+
+<p style="margin-left:11%; margin-top: 1em">The up and down
+cursor keys work on a user slide basis. You can use them to
+skip the rest of an overlay or to jump to the previous user
+slide, ignoring the state of the current slide.</p>
+
+<p style="margin-left:11%; margin-top: 1em">When going
+through an overlay, two additional previews may be activated
+in the presenter view, just below the main view, showing the
+next and the previous slide in an overlay.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Pdfpc tries to
+find these overlays automatically by looking into the page
+labels in the PDF file. For LaTeX this works correctly at
+least with the beamer class and also modifying the page
+numbers manually (compiling with pdflatex). If your
+preferred slide-producing method does not work correctly
+with this detection, you can supply this information using
+the 'o' key for each slide that is part of an overlay
+(except the first one!). The page numbering is also adapted.
+This information is automatically stored.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>End
+slide</b> <br>
+Some people like to have some additional, backup slides
+after the last slide in the actual presentation. Things like
+bibliographic references or slides referring to specialized
+questions are typical examples. Pdfpc lets you define which
+is the last slide in the actual presentation via the 'e'
+key. This just changes the progress display in the presenter
+screen, as to have a better overview of how many slides are
+left.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Movies</b>
+<br>
+Pdfpc can play back movies included in the PDF file. Movies
+may be started and stopped by clicking within their area.
+For the presenter, a progress bar is drawn along the bottom
+of the movie. This expands when the mouse hovers over it,
+allowing one to seek by clicking or dragging within the
+progress bar. Switching slides automatically stops playback,
+and movies will be reset after leaving and returning to a
+slide.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Movies may be
+included in PDF files as &quot;screen annotations&quot;.
+pdfpc does not yet support options that modify the playback
+of these movies. In LaTeX, such movies may be added to a
+presentation with the &quot;movie15&quot; or
+&quot;multimedia&quot; package. Note that the poster,
+autoplay, and repeat options are not yet supported. (Also,
+run ps2pdf with the &minus;dNOSAFER flag.)</p>
+
+<p style="margin-left:11%; margin-top: 1em">As a perhaps
+simpler option, pdfpc will play back movies linked from a
+hyperlink of type &quot;launch&quot;. A query string may be
+added to the URL of the movie to enable the
+&quot;autostart&quot; and &quot;loop&quot; properties.
+(E.g., a link to &quot;movie.avi?autostart&amp;loop&quot;
+will start playing automatically, and loop when it reaches
+the end.) In LaTeX, such links are created with</p>
+
+
+<p style="margin-left:22%; margin-top: 1em">\usepackage{hyperref}
+<br>
+\href{run:&lt;movie file&gt;}{&lt;placeholder
+content&gt;}</p>
+
+<p style="margin-left:11%; margin-top: 1em">The movie will
+playback in the area taken by the placeholder content. Using
+a frame of the movie will ensure the correct aspect
+ratio.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>pdfpc
+Files</b> <br>
+The notes and other additional information are stored in a
+file with the extension &quot;pdfpc&quot;. When pdfpc is
+invoked with a PDF file, it automatically checks for and
+loads the associated pdfpc file, if it exists. This means
+that you normally do not have to deal with this kind of
+files explicitly.</p>
+
+<p style="margin-left:11%; margin-top: 1em">There are
+however cases where you may want to edit the files manually.
+The most typical case is if you add or remove some slides
+after you have edited notes or defined overlays. It may be
+quicker to edit the pdfpc file than to re-enter the whole
+information. Future versions may include external tools for
+dealing with this case automatically.</p>
+
+<p style="margin-left:11%; margin-top: 1em">The files are
+plain-text files that should be fairly self-explanatory. A
+couple of things to note:</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p style="margin-top: 1em">&bull;</p></td>
+<td width="2%"></td>
+<td width="84%">
+
+
+<p style="margin-top: 1em">The slide numbers of the notes
+refer to user slides</p></td>
+<td width="2%">
+</td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p>&bull;</p></td>
+<td width="2%"></td>
+<td width="84%">
+
+
+<p>The [notes] sections must be the last one in the
+file</p> </td>
+<td width="2%">
+</td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p>&bull;</p></td>
+<td width="2%"></td>
+<td width="84%">
+
+
+<p>For the programmers out there: slide indexes start at
+1</p> </td>
+<td width="2%">
+</td></tr>
+</table>
+
+<h2>CONFIG FILES
+<a name="CONFIG FILES"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>Keybindings</b>
+<br>
+The main configuration file for pdfpc is located in
+@SYSCONFDIR@/pdfpcrc. Additionally, $HOME/.pdfpcrc is also
+read, if present. Following commands are aceepted <b><br>
+bind &lt;key&gt; &lt;func&gt;</b></p>
+
+<p style="margin-left:22%;">Bind a key to a function</p>
+
+<p style="margin-left:11%;"><b>unbind &lt;key&gt;</b></p>
+
+<p style="margin-left:22%;">Unbinds the given key</p>
+
+<p style="margin-left:11%;"><b>unbind_all</b></p>
+
+<p style="margin-left:22%;">Unbinds all the keybindings</p>
+
+<p style="margin-left:11%;"><b>mouse &lt;button&gt;
+&lt;func&gt;</b></p>
+
+<p style="margin-left:22%;">Binds a mouse button to a
+function</p>
+
+<p style="margin-left:11%;"><b>unmouse
+&lt;button&gt;</b></p>
+
+<p style="margin-left:22%;">Unbinds a mouse button</p>
+
+<p style="margin-left:11%;"><b>unmouse_all</b></p>
+
+<p style="margin-left:22%;">Unbinds all the mouse
+bindings</p>
+
+<p style="margin-left:11%;"><b>switch-screens</b></p>
+
+<p style="margin-left:22%;">Switches screens, in the same
+way as the command line parameter with the same name.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Key names can
+be obtained with the help of the xev utility. Note that
+names are case sensitive. Modifiers can be specified in the
+form &lt;mod&gt;+&lt;key&gt; where &lt;mod&gt; is one of S
+(for shift), C (for control) and A/M (for Alt/Meta). E.g.
+<br>
+bind S+Next next10</p>
+
+<p style="margin-left:11%; margin-top: 1em">A list of all
+possible functions can be obtained via the &minus;L command
+line option.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Some
+configuration files for commonly used devices (wireless
+presenters, Bluetooth headsets, ...)
+<a href="https://pdfpc.github.io/#config-files">are available</a>.
+If your device is not yet supported and you generated a
+working config file, please contribute it (see contact
+information below).</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>Appearance</b>
+<br>
+With GTK3 it is possible to modify the appearance of pdfpc.
+There are two locations where pdfpc is looking for files.
+The default location is
+@CMAKE_INSTALL_PREFIX@/share/pixmaps/pdfpc/pdfpc.css. A user
+can copy it to $XDG_CONFIG_HOME/pdfpc.css and change the
+attributes as he likes.</p>
+
+<h2>BUGS
+<a name="BUGS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">There may be a
+small memory leak in the program. I am trying to solve it.
+It should not be too important for up to some hundreds of
+slides.</p>
+
+<p style="margin-left:11%; margin-top: 1em">Other bugs can
+be reported at
+<a href="https://github.com/pdfpc/pdfpc/issues">the issue tracker</a>.</p>
+
+<h2>SEE ALSO
+<a name="SEE ALSO"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">pdfpc was
+previously developed by
+<a href="https://github.com/davvil/pdfpc">davvil</a>.</p>
+
+<p style="margin-left:11%; margin-top: 1em">pdfpc is a fork
+of Pdf Presenter Console, available
+<a href="https://github.com/jakobwesthoff/Pdf-Presenter-Console">online</a>.</p>
+</body>
+</html>
