@@ -1,5 +1,5 @@
 <!-- Creator     : groff version 1.22.3 -->
-<!-- CreationDate: Thu Nov  5 10:53:35 2015 -->
+<!-- CreationDate: Fri Feb 12 09:14:29 2016 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -102,32 +102,6 @@ to be used as a countdown. (Format: HH:MM (24h))</p>
 
 <p style="margin-left:22%;">Display the time of the day</p>
 
-<p style="margin-left:11%;"><b>&minus;u,
-&minus;&minus;current&minus;size</b><i>=N</i></p>
-
-<p style="margin-left:22%;">Percentage of the presenter
-screen to be used for the current slide. (Default 60)</p>
-
-<p style="margin-left:11%;"><b>&minus;h,
-&minus;&minus;current&minus;height</b><i>=N</i></p>
-
-<p style="margin-left:22%;">Percentage of the height of the
-presenter screen to be used for the current slide. (Default
-80)</p>
-
-<p style="margin-left:11%;"><b>&minus;H,
-&minus;&minus;next&minus;height</b><i>=N</i></p>
-
-<p style="margin-left:22%;">Percentage of the height of the
-presenter screen to be used for the next slide. (Default
-70)</p>
-
-<p style="margin-left:11%;"><b>&minus;o,
-&minus;&minus;overview&minus;min&minus;size</b><i>=N</i></p>
-
-<p style="margin-left:22%;">Minimum width for the overview
-miniatures, in pixels. (Default 150)</p>
-
 <p style="margin-left:11%;"><b>&minus;s,
 &minus;&minus;switch&minus;screens</b></p>
 
@@ -148,11 +122,11 @@ speed.</p>
 slide images to trade memory consumption for speed. (Avg.
 factor 30)</p>
 
-<p style="margin-left:11%;"><b>&minus;b,
-&minus;&minus;black&minus;on&minus;end</b></p>
+<p style="margin-left:11%;"><b>&minus;g,
+&minus;&minus;disable&minus;auto&minus;grouping</b></p>
 
-<p style="margin-left:22%;">Add an additional black slide
-at the end of the presentation</p>
+<p style="margin-left:22%;">Disable auto detection of
+overlay groups. (Default: enabled)</p>
 
 <p style="margin-left:11%;"><b>&minus;S,
 &minus;&minus;single&minus;screen</b></p>
@@ -174,7 +148,7 @@ config file(s)</p>
 <p style="margin-left:11%;"><b>&minus;Z,
 &minus;&minus;size</b></p>
 
-<p style="margin-left:22%;">Size of the presenter console
+<p style="margin-left:22%;">Size of the presentation window
 in width:height format (forces windowed mode)</p>
 
 <p style="margin-left:11%;"><b>&minus;n,
@@ -672,12 +646,15 @@ file</p> </td>
 </h2>
 
 
+<p style="margin-left:11%; margin-top: 1em">The main
+configuration file for pdfpc is located in
+@SYSCONFDIR@/pdfpcrc. Additionally, $HOME/.pdfpcrc is also
+read, if present.</p>
+
 
 <p style="margin-left:11%; margin-top: 1em"><b>Keybindings</b>
 <br>
-The main configuration file for pdfpc is located in
-@SYSCONFDIR@/pdfpcrc. Additionally, $HOME/.pdfpcrc is also
-read, if present. Following commands are aceepted <b><br>
+Following commands are aceepted: <b><br>
 bind &lt;key&gt; &lt;func&gt;</b></p>
 
 <p style="margin-left:22%;">Bind a key to a function</p>
@@ -706,11 +683,6 @@ function</p>
 <p style="margin-left:22%;">Unbinds all the mouse
 bindings</p>
 
-<p style="margin-left:11%;"><b>switch-screens</b></p>
-
-<p style="margin-left:22%;">Switches screens, in the same
-way as the command line parameter with the same name.</p>
-
 <p style="margin-left:11%; margin-top: 1em">Key names can
 be obtained with the help of the xev utility. Note that
 names are case sensitive. Modifiers can be specified in the
@@ -730,6 +702,47 @@ presenters, Bluetooth headsets, ...)
 If your device is not yet supported and you generated a
 working config file, please contribute it (see contact
 information below).</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Options</b>
+<br>
+Some permanent changes can be configured via config file.
+The syntax is: <b><br>
+option &lt;option_name&gt; &lt;option_value&gt;</b></p>
+
+<p style="margin-left:11%; margin-top: 1em">The following
+option_name are allowed: <b><br>
+current-size</b></p>
+
+<p style="margin-left:22%;">Percentage of the presenter
+screen to be used for the current slide. (int, Default
+60)</p>
+
+<p style="margin-left:11%;"><b>current-height</b></p>
+
+<p style="margin-left:22%;">Percentage of the height of the
+presenter screen to be used for the current slide. (int,
+Default 80)</p>
+
+<p style="margin-left:11%;"><b>next-height</b></p>
+
+<p style="margin-left:22%;">Percentage of the height of the
+presenter screen to be used for the next slide. (int,
+Default 70)</p>
+
+<p style="margin-left:11%;"><b>overview-min-size</b></p>
+
+<p style="margin-left:22%;">Minimum width for the overview
+miniatures, in pixels. (int, Default 150)</p>
+
+<p style="margin-left:11%;"><b>black-on-end</b></p>
+
+<p style="margin-left:22%;">Add an additional black slide
+at the end of the presentation (bool, Default false)</p>
+
+<p style="margin-left:11%;"><b>switch-screens</b></p>
+
+<p style="margin-left:22%;">Switch the presentation and the
+presenter screen. (bool, Default false)</p>
 
 
 <p style="margin-left:11%; margin-top: 1em"><b>Appearance</b>
