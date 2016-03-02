@@ -78,6 +78,11 @@
 <pre><code>pdfpc pdfpc-demo.pdf
 </code></pre>
 
+<p>or try <a href="demo/pdfpc-video-example.zip">an example with movies</a> and start it with</p>
+
+<pre><code>pdfpc video-example.pdf
+</code></pre>
+
 <h1>
 <a id="news" class="anchor" href="#news" aria-hidden="true"><span class="octicon octicon-link"></span></a>News</h1>
 
@@ -93,6 +98,22 @@
 
 <h1>
 <a id="getting-pdfpc" class="anchor" href="#getting-pdfpc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting pdfpc</h1>
+
+<h2>
+<a id="alternatives" class="anchor" href="#alternatives" aria-hidden="true"><span class="octicon octicon-link"></span></a>Binaries</h2>
+
+<p>If you use Debian or Ubuntu, you can install it from the repository.</p>
+
+<pre><code>sudo apt-get install pdf-presenter-console
+</code></pre>
+
+<p>If you use Arch Linux, you can install it directly via pacman (<a href="https://www.archlinux.org/packages/community/x86_64/pdfpc/">Arch Linux Package Description</a>).</p>
+
+<pre><code>pacman -S pdfpc</code></pre>
+
+
+
+<p>You can also get the bleeding-edge version from <a href="https://github.com/pdfpc/pdfpc">GitHub</a> (or <a href="https://aur.archlinux.org/packages/pdfpc-git">AUR</a>). For compiling the git version, follow the instructions given in the <a href="https://github.com/pdfpc/pdfpc">GitHub page</a>.</p>
 
 <h2>
 <a id="compiling-from-source" class="anchor" href="#compiling-from-source" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
@@ -136,20 +157,6 @@ sudo make install
 
 <pre><code>cmake -DCMAKE_INSTALL_PREFIX=/usr -DSYSCONFDIR=/etc ..
 </code></pre>
-
-<h2>
-<a id="alternatives" class="anchor" href="#alternatives" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alternatives</h2>
-
-<p>If you use Arch Linux, you can install it directly via pacman (<a href="https://www.archlinux.org/packages/community/x86_64/pdfpc/">Arch Linux Package Description</a>).</p>
-
-<pre><code>pacman -S pdfpc</code></pre>
-
-<p>If you use Debian or Ubuntu, you can install it from the repository. Older releases of Debian/Ubuntu generally come with an older version of pdfpc.</p>
-
-<pre><code>apt-get install pdf-presenter-console
-</code></pre>
-
-<p>You can also get the bleeding-edge version from <a href="https://github.com/pdfpc/pdfpc">GitHub</a> (or <a href="https://aur.archlinux.org/packages/pdfpc-git">AUR</a>). For compiling the git version, follow the instructions given in the <a href="https://github.com/pdfpc/pdfpc">GitHub page</a>.</p>
 
 <h1>
 <a id="config-files" class="anchor" href="#config-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>Config files</h1>
