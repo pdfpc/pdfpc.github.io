@@ -1,5 +1,5 @@
 <!-- Creator     : groff version 1.22.3 -->
-<!-- CreationDate: Fri Feb 12 09:14:29 2016 -->
+<!-- CreationDate: Wed Jul  6 09:46:20 2016 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -268,6 +268,49 @@ Bracket Left</b></p>
 Bracket Right</b></p>
 
 <p style="margin-left:22%;">Decrease Notes Font Size</p>
+
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>8</b></p></td>
+<td width="10%"></td>
+<td width="32%">
+
+
+<p>Toggle Pointer Mode</p></td>
+<td width="46%">
+</td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>7</b></p></td>
+<td width="10%"></td>
+<td width="32%">
+
+
+<p>Decrease pointer size</p></td>
+<td width="46%">
+</td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>9</b></p></td>
+<td width="10%"></td>
+<td width="32%">
+
+
+<p>Increase pointer size</p></td>
+<td width="46%">
+</td></tr>
+</table>
 
 <p style="margin-left:11%;"><b>Escape / q</b></p>
 
@@ -558,10 +601,15 @@ run ps2pdf with the &minus;dNOSAFER flag.)</p>
 simpler option, pdfpc will play back movies linked from a
 hyperlink of type &quot;launch&quot;. A query string may be
 added to the URL of the movie to enable the
-&quot;autostart&quot; and &quot;loop&quot; properties.
-(E.g., a link to &quot;movie.avi?autostart&amp;loop&quot;
-will start playing automatically, and loop when it reaches
-the end.) In LaTeX, such links are created with</p>
+&quot;autostart&quot;, &quot;loop&quot; and
+&quot;noprogress&quot; properties, if necessary. (E.g., a
+link to
+&quot;movie.avi?autostart&amp;loop&amp;noprogress&quot; will
+add a video that starts playing automatically, loops when it
+reaches the end, and does not show the progress bar.)</p>
+
+<p style="margin-left:11%; margin-top: 1em">In LaTeX, such
+links are created with</p>
 
 
 <p style="margin-left:22%; margin-top: 1em">\usepackage{hyperref}
@@ -573,6 +621,17 @@ content&gt;}</p>
 playback in the area taken by the placeholder content. Using
 a frame of the movie will ensure the correct aspect
 ratio.</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Pointer
+Mode</b> <br>
+If needed it is possible to turn on a pointer which draws a
+red dot in the place pointed by mouse cursor on both -
+presenter and presentation screens. It is also possible to
+increase and decrease the pointer size. Additionally when
+the pointer is enabled it is possible to drag &amp; drop
+some area of the presenter screen causing it to be
+highlighted in both views as well. Area outside the selected
+region will be dimmed.</p>
 
 <p style="margin-left:11%; margin-top: 1em"><b>pdfpc
 Files</b> <br>
@@ -648,8 +707,8 @@ file</p> </td>
 
 <p style="margin-left:11%; margin-top: 1em">The main
 configuration file for pdfpc is located in
-@SYSCONFDIR@/pdfpcrc. Additionally, $HOME/.pdfpcrc is also
-read, if present.</p>
+/usr/local/etc/pdfpcrc. Additionally,
+$XDG_CONFIG_DIR/pdfpc/pdfpcrc is also read, if present.</p>
 
 
 <p style="margin-left:11%; margin-top: 1em"><b>Keybindings</b>
@@ -690,6 +749,14 @@ form &lt;mod&gt;+&lt;key&gt; where &lt;mod&gt; is one of S
 (for shift), C (for control) and A/M (for Alt/Meta). E.g.
 <br>
 bind S+Next next10</p>
+
+<p style="margin-left:11%; margin-top: 1em">A shorthand for
+specifying key combinations constituting shift and an
+alphabetic character is to simply give the uppercase version
+of the alphabetic character. For example, to bind
+&lt;shift&gt;+r to the &rsquo;reset&rsquo; function, use
+<br>
+bind R reset</p>
 
 <p style="margin-left:11%; margin-top: 1em">A list of all
 possible functions can be obtained via the &minus;L command
@@ -750,9 +817,19 @@ presenter screen. (bool, Default false)</p>
 With GTK3 it is possible to modify the appearance of pdfpc.
 There are two locations where pdfpc is looking for files.
 The default location is
-@CMAKE_INSTALL_PREFIX@/share/pixmaps/pdfpc/pdfpc.css. A user
-can copy it to $XDG_CONFIG_HOME/pdfpc.css and change the
+/usr/local/share/pixmaps/pdfpc/pdfpc.css. A user can copy it
+to $XDG_CONFIG_HOME/pdfpc/pdfpc.css and change the
 attributes as he likes.</p>
+
+<h2>INTEGRATION WITH OTHER TOOLS
+<a name="INTEGRATION WITH OTHER TOOLS"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">Pdfpc provides
+a dbus interface that other tools can use to execute any
+action listed by <b>--list-actions</b>. The interface
+appears on the session bus as <i>io.github.pdfpc</i>.</p>
 
 <h2>BUGS
 <a name="BUGS"></a>
