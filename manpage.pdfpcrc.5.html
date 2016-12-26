@@ -1,0 +1,152 @@
+<!-- Creator     : groff version 1.22.3 -->
+<!-- CreationDate: Mon Dec 26 16:25:27 2016 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<meta name="Content-Style" content="text/css">
+<style type="text/css">
+       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
+       h1      { text-align: center }
+</style>
+<title>pdfpcrc</title>
+
+</head>
+<body>
+
+<h1 align="center">pdfpcrc</h1>
+
+
+
+<h2>NAME
+<a name="NAME"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">pdfpcrc &minus;
+pdfpc configuration file</p>
+
+<h2>SYNOPSIS
+<a name="SYNOPSIS"></a>
+</h2>
+
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>/usr/local/etc/pdfpcrc
+/ $XDG_CONFIG_DIR/pdfpc/pdfpcrc</b></p>
+
+<h2>DESCRIPTION
+<a name="DESCRIPTION"></a>
+</h2>
+
+
+<p style="margin-left:11%; margin-top: 1em">pdfpc(1) reads
+its configuration file from /usr/local/etc/pdfpcrc. It also
+reads, if present, the file $XDG_CONFIG_DIR/pdfpc/pdfpcrc.
+If $XDG_CONFIG_DIR is not set, it uses $HOME/.config .</p>
+
+
+<p style="margin-left:11%; margin-top: 1em"><b>Keybindings</b>
+<br>
+Following commands are aceepted: <b><br>
+bind &lt;key&gt; &lt;func&gt;</b></p>
+
+<p style="margin-left:22%;">Bind a key to a function</p>
+
+<p style="margin-left:11%;"><b>unbind &lt;key&gt;</b></p>
+
+<p style="margin-left:22%;">Unbinds the given key</p>
+
+<p style="margin-left:11%;"><b>unbind_all</b></p>
+
+<p style="margin-left:22%;">Unbinds all the keybindings</p>
+
+<p style="margin-left:11%;"><b>mouse &lt;button&gt;
+&lt;func&gt;</b></p>
+
+<p style="margin-left:22%;">Binds a mouse button to a
+function</p>
+
+<p style="margin-left:11%;"><b>unmouse
+&lt;button&gt;</b></p>
+
+<p style="margin-left:22%;">Unbinds a mouse button</p>
+
+<p style="margin-left:11%;"><b>unmouse_all</b></p>
+
+<p style="margin-left:22%;">Unbinds all the mouse
+bindings</p>
+
+<p style="margin-left:11%; margin-top: 1em">Key names can
+be obtained with the help of the xev utility. Note that
+names are case sensitive. Modifiers can be specified in the
+form &lt;mod&gt;+&lt;key&gt; where &lt;mod&gt; is one of S
+(for shift), C (for control) and A/M (for Alt/Meta). E.g.
+<br>
+bind S+Next next10</p>
+
+<p style="margin-left:11%; margin-top: 1em">A shorthand for
+specifying key combinations constituting shift and an
+alphabetic character is to simply give the uppercase version
+of the alphabetic character. For example, to bind
+&lt;shift&gt;+r to the &rsquo;reset&rsquo; function, use
+<br>
+bind R reset</p>
+
+<p style="margin-left:11%; margin-top: 1em">A list of all
+possible functions can be obtained via the &minus;L command
+line option if pdfpc(1).</p>
+
+<p style="margin-left:11%; margin-top: 1em"><b>Options</b>
+<br>
+Some permanent changes can be configured via config file.
+The syntax is: <b><br>
+option &lt;option_name&gt; &lt;option_value&gt;</b></p>
+
+<p style="margin-left:11%; margin-top: 1em">The following
+option_name are allowed: <b><br>
+current-size</b></p>
+
+<p style="margin-left:22%;">Percentage of the presenter
+screen to be used for the current slide. (int, Default
+60)</p>
+
+<p style="margin-left:11%;"><b>current-height</b></p>
+
+<p style="margin-left:22%;">Percentage of the height of the
+presenter screen to be used for the current slide. (int,
+Default 80)</p>
+
+<p style="margin-left:11%;"><b>next-height</b></p>
+
+<p style="margin-left:22%;">Percentage of the height of the
+presenter screen to be used for the next slide. (int,
+Default 70)</p>
+
+<p style="margin-left:11%;"><b>overview-min-size</b></p>
+
+<p style="margin-left:22%;">Minimum width for the overview
+miniatures, in pixels. (int, Default 150)</p>
+
+<p style="margin-left:11%;"><b>black-on-end</b></p>
+
+<p style="margin-left:22%;">Add an additional black slide
+at the end of the presentation (bool, Default false)</p>
+
+<p style="margin-left:11%;"><b>switch-screens</b></p>
+
+<p style="margin-left:22%;">Switch the presentation and the
+presenter screen. (bool, Default false)</p>
+
+<h2>SEE ALSO
+<a name="SEE ALSO"></a>
+</h2>
+
+ 
+<p style="margin-left:11%; margin-top: 1em">pdfpc(1)</p>
+</body>
+</html>

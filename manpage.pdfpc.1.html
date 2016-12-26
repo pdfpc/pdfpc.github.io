@@ -1,5 +1,5 @@
 <!-- Creator     : groff version 1.22.3 -->
-<!-- CreationDate: Sun Oct  2 15:06:09 2016 -->
+<!-- CreationDate: Mon Dec 26 16:24:48 2016 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -89,7 +89,7 @@ the presentation.</p>
 &minus;&minus;last&minus;minutes</b><i>=N</i></p>
 
 <p style="margin-left:22%;">Time in minutes, from which on
-the timer changes its color. (Default 5 minutes)</p>
+the timer changes its color. (Default: 5 minutes)</p>
 
 <p style="margin-left:11%;"><b>&minus;t,
 &minus;&minus;start&minus;time</b><i>=T</i></p>
@@ -121,6 +121,12 @@ speed.</p>
 <p style="margin-left:22%;">Disable the compression of
 slide images to trade memory consumption for speed. (Avg.
 factor 30)</p>
+
+<p style="margin-left:11%;"><b>&minus;p,
+&minus;&minus;persist&minus;cache</b></p>
+
+<p style="margin-left:22%;">Persist the PNG cache on disk
+for faster startup.</p>
 
 <p style="margin-left:11%;"><b>&minus;g,
 &minus;&minus;disable&minus;auto&minus;grouping</b></p>
@@ -155,8 +161,8 @@ in width:height format (forces windowed mode)</p>
 &minus;&minus;notes</b><i>=P</i></p>
 
 <p style="margin-left:22%;">Position of notes on the PDF
-page. Position can be either left, right, top or bottom
-(Default none)</p>
+page. Position can be either left, right, top or bottom.
+Disable slide auto-grouping (Default: none)</p>
 
 <p style="margin-left:11%;"><b>&minus;h,
 &minus;&minus;help</b></p>
@@ -401,8 +407,32 @@ slide)</p> </td></tr>
 <p>Define end slide</p></td></tr>
 </table>
 
-<p style="margin-left:11%; margin-top: 1em">See <b>CONFIG
-FILE</b> below if you want to customize the keybindings.</p>
+<p style="margin-left:11%; margin-top: 1em">Within overview
+mode the following key bindings are used <b><br>
+Return / Left mouse button</b></p>
+
+<p style="margin-left:22%;">Goto currently selected page
+(last page of overlay)</p>
+
+<p style="margin-left:11%;"><b>Shift + Return / Shift +
+Left mouse button</b></p>
+
+<p style="margin-left:22%;">Goto currently selected page
+(first page of overlay)</p>
+
+<p style="margin-left:11%;"><b>Cursor left / Page
+up</b></p>
+
+<p style="margin-left:22%;">Select previous slide</p>
+
+<p style="margin-left:11%;"><b>Cursor right / Page
+down</b></p>
+
+<p style="margin-left:22%;">Select next slide</p>
+
+<p style="margin-left:11%; margin-top: 1em">See
+<b>pdfpcrc(5)</b> if you want to customize the
+keybindings.</p>
 
 <h2>FEATURES
 <a name="FEATURES"></a>
@@ -425,6 +455,11 @@ faster, as with normal PDF viewers.</p>
 pre-rendering takes a lot of memory it can be disabled using
 the &minus;&minus;disable&minus;cache switch at the cost of
 speed.</p>
+
+<p style="margin-left:11%; margin-top: 1em">It it also
+possible to store the pre-rendered slides on the disk (see
+&minus;&minus;persist-cache). This speeds up the start of
+the program if the slide-set is used for a second time.</p>
 
 <p style="margin-left:11%; margin-top: 1em"><b>Cache
 compression</b> <br>
@@ -517,15 +552,15 @@ part of an overlay:</p>
 <td width="1%">
 
 
-<p style="margin-top: 1em">&bull;</p></td>
+<p>&bull;</p></td>
 <td width="2%"></td>
 <td width="86%">
 
 
-<p style="margin-top: 1em">If the current slide is part of
-an overlay we just jump to the previous slide. That means
-that we are in the middle of an overlay we can jump forward
-and backward through the single steps of it</p></td></tr>
+<p>If the current slide is part of an overlay we just jump
+to the previous slide. That means that we are in the middle
+of an overlay we can jump forward and backward through the
+single steps of it</p></td></tr>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
@@ -700,126 +735,15 @@ file</p> </td>
 </td></tr>
 </table>
 
-<h2>CONFIG FILES
-<a name="CONFIG FILES"></a>
-</h2>
-
-
-<p style="margin-left:11%; margin-top: 1em">The main
-configuration file for pdfpc is located in
-@SYSCONFDIR@/pdfpcrc. Additionally,
-$XDG_CONFIG_DIR/pdfpc/pdfpcrc is also read, if present.</p>
-
-
-<p style="margin-left:11%; margin-top: 1em"><b>Keybindings</b>
-<br>
-Following commands are aceepted: <b><br>
-bind &lt;key&gt; &lt;func&gt;</b></p>
-
-<p style="margin-left:22%;">Bind a key to a function</p>
-
-<p style="margin-left:11%;"><b>unbind &lt;key&gt;</b></p>
-
-<p style="margin-left:22%;">Unbinds the given key</p>
-
-<p style="margin-left:11%;"><b>unbind_all</b></p>
-
-<p style="margin-left:22%;">Unbinds all the keybindings</p>
-
-<p style="margin-left:11%;"><b>mouse &lt;button&gt;
-&lt;func&gt;</b></p>
-
-<p style="margin-left:22%;">Binds a mouse button to a
-function</p>
-
-<p style="margin-left:11%;"><b>unmouse
-&lt;button&gt;</b></p>
-
-<p style="margin-left:22%;">Unbinds a mouse button</p>
-
-<p style="margin-left:11%;"><b>unmouse_all</b></p>
-
-<p style="margin-left:22%;">Unbinds all the mouse
-bindings</p>
-
-<p style="margin-left:11%; margin-top: 1em">Key names can
-be obtained with the help of the xev utility. Note that
-names are case sensitive. Modifiers can be specified in the
-form &lt;mod&gt;+&lt;key&gt; where &lt;mod&gt; is one of S
-(for shift), C (for control) and A/M (for Alt/Meta). E.g.
-<br>
-bind S+Next next10</p>
-
-<p style="margin-left:11%; margin-top: 1em">A shorthand for
-specifying key combinations constituting shift and an
-alphabetic character is to simply give the uppercase version
-of the alphabetic character. For example, to bind
-&lt;shift&gt;+r to the &rsquo;reset&rsquo; function, use
-<br>
-bind R reset</p>
-
-<p style="margin-left:11%; margin-top: 1em">A list of all
-possible functions can be obtained via the &minus;L command
-line option.</p>
-
-<p style="margin-left:11%; margin-top: 1em">Some
-configuration files for commonly used devices (wireless
-presenters, Bluetooth headsets, ...)
-<a href="https://pdfpc.github.io/#config-files">are available</a>.
-If your device is not yet supported and you generated a
-working config file, please contribute it (see contact
-information below).</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>Options</b>
-<br>
-Some permanent changes can be configured via config file.
-The syntax is: <b><br>
-option &lt;option_name&gt; &lt;option_value&gt;</b></p>
-
-<p style="margin-left:11%; margin-top: 1em">The following
-option_name are allowed: <b><br>
-current-size</b></p>
-
-<p style="margin-left:22%;">Percentage of the presenter
-screen to be used for the current slide. (int, Default
-60)</p>
-
-<p style="margin-left:11%;"><b>current-height</b></p>
-
-<p style="margin-left:22%;">Percentage of the height of the
-presenter screen to be used for the current slide. (int,
-Default 80)</p>
-
-<p style="margin-left:11%;"><b>next-height</b></p>
-
-<p style="margin-left:22%;">Percentage of the height of the
-presenter screen to be used for the next slide. (int,
-Default 70)</p>
-
-<p style="margin-left:11%;"><b>overview-min-size</b></p>
-
-<p style="margin-left:22%;">Minimum width for the overview
-miniatures, in pixels. (int, Default 150)</p>
-
-<p style="margin-left:11%;"><b>black-on-end</b></p>
-
-<p style="margin-left:22%;">Add an additional black slide
-at the end of the presentation (bool, Default false)</p>
-
-<p style="margin-left:11%;"><b>switch-screens</b></p>
-
-<p style="margin-left:22%;">Switch the presentation and the
-presenter screen. (bool, Default false)</p>
-
 
 <p style="margin-left:11%; margin-top: 1em"><b>Appearance</b>
 <br>
 With GTK3 it is possible to modify the appearance of pdfpc.
 There are two locations where pdfpc is looking for files.
 The default location is
-@CMAKE_INSTALL_PREFIX@/share/pixmaps/pdfpc/pdfpc.css. A user
-can copy it to $XDG_CONFIG_HOME/pdfpc/pdfpc.css and change
-the attributes as he likes.</p>
+/usr/local/share/pixmaps/pdfpc/pdfpc.css. A user can copy it
+to $XDG_CONFIG_HOME/pdfpc/pdfpc.css and change the
+attributes as he likes.</p>
 
 <h2>INTEGRATION WITH OTHER TOOLS
 <a name="INTEGRATION WITH OTHER TOOLS"></a>
@@ -845,8 +769,8 @@ slides.</p>
 be reported at
 <a href="https://github.com/pdfpc/pdfpc/issues">the issue tracker</a>.</p>
 
-<h2>SEE ALSO
-<a name="SEE ALSO"></a>
+<h2>ACKNOWLEDGEMENTS
+<a name="ACKNOWLEDGEMENTS"></a>
 </h2>
 
 
@@ -857,5 +781,12 @@ previously developed by
 <p style="margin-left:11%; margin-top: 1em">pdfpc is a fork
 of Pdf Presenter Console, available
 <a href="https://github.com/jakobwesthoff/Pdf-Presenter-Console">online</a>.</p>
+
+<h2>SEE ALSO
+<a name="SEE ALSO"></a>
+</h2>
+
+ 
+<p style="margin-left:11%; margin-top: 1em">pdfpcrc(5)</p>
 </body>
 </html>
