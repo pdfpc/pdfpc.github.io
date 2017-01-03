@@ -1,152 +1,98 @@
-<!-- Creator     : groff version 1.22.3 -->
-<!-- CreationDate: Mon Dec 26 16:25:27 2016 -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta name="generator" content="groff -Thtml, see www.gnu.org">
-<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<meta name="Content-Style" content="text/css">
-<style type="text/css">
-       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       h1      { text-align: center }
-</style>
-<title>pdfpcrc</title>
+<HTML>
+<BODY>
+<PRE>
+<!-- Manpage converted by man2html 3.0.1 -->
 
-</head>
-<body>
 
-<h1 align="center">pdfpcrc</h1>
+</PRE>
+<H2>SYNOPSIS</H2><PRE>
+       <B>@SYSCONFDIR@/pdfpcrc</B> <B>/</B> <B>$XDG_CONFIG_DIR/pdfpc/pdfpcrc</B>
 
 
 
-<h2>NAME
-<a name="NAME"></a>
-</h2>
+</PRE>
+<H2>DESCRIPTION</H2><PRE>
+       <B>pdfpc(1)</B>  reads  its  configuration  file from @SYSCONFDIR@/pdfpcrc. It
+       also reads, if  present,  the  file  $XDG_CONFIG_DIR/pdfpc/pdfpcrc.  If
+       $XDG_CONFIG_DIR is not set, it uses $HOME/.config .
 
 
-<p style="margin-left:11%; margin-top: 1em">pdfpcrc &minus;
-pdfpc configuration file</p>
+   <B>Keybindings</B>
+       Following commands are aceepted:
 
-<h2>SYNOPSIS
-<a name="SYNOPSIS"></a>
-</h2>
+       <B>bind</B> <B>&lt;key&gt;</B> <B>&lt;func&gt;</B>
+              Bind a key to a function
+
+       <B>unbind</B> <B>&lt;key&gt;</B>
+              Unbinds the given key
+
+       <B>unbind_all</B>
+              Unbinds all the keybindings
+
+       <B>mouse</B> <B>&lt;button&gt;</B> <B>&lt;func&gt;</B>
+              Binds a mouse button to a function
+
+       <B>unmouse</B> <B>&lt;button&gt;</B>
+              Unbinds a mouse button
+
+       <B>unmouse_all</B>
+              Unbinds all the mouse bindings
+
+
+       Key  names  can be obtained with the help of the xev utility. Note that
+       names are case sensitive.  Modifiers  can  be  specified  in  the  form
+       &lt;mod&gt;+&lt;key&gt;  where  &lt;mod&gt;  is one of S (for shift), C (for control) and
+       A/M (for Alt/Meta). E.g.
+
+              bind S+Next    next10
+
+
+       A shorthand for specifying key combinations constituting shift  and  an
+       alphabetic  character  is  to  simply give the uppercase version of the
+       alphabetic character. For example, to bind  &lt;shift&gt;+r  to  the  'reset'
+       function, use
+
+              bind R reset
+
+
+       A  list  of  all  possible functions can be obtained via the -L command
+       line option if <B>pdfpc(1)</B>.
+
+
+       <B>current-height</B>
+              Percentage of the height of the presenter screen to be used  for
+              the current slide. (int, Default 80)
+
+       <B>next-height</B>
+              Percentage  of the height of the presenter screen to be used for
+              the next slide. (int, Default 70)
+
+       <B>overview-min-size</B>
+              Minimum width for the  overview  miniatures,  in  pixels.  (int,
+              Default 150)
+
+       <B>black-on-end</B>
+              Add  an  additional  black  slide at the end of the presentation
+              (bool, Default false)
+
+       <B>switch-screens</B>
+              Switch the presentation and the presenter screen. (bool, Default
+              false)
 
 
 
-<p style="margin-left:11%; margin-top: 1em"><b>/usr/local/etc/pdfpcrc
-/ $XDG_CONFIG_DIR/pdfpc/pdfpcrc</b></p>
-
-<h2>DESCRIPTION
-<a name="DESCRIPTION"></a>
-</h2>
+</PRE>
+<H2>SEE ALSO</H2><PRE>
+       <B>pdfpc(1)</B>
 
 
-<p style="margin-left:11%; margin-top: 1em">pdfpc(1) reads
-its configuration file from /usr/local/etc/pdfpcrc. It also
-reads, if present, the file $XDG_CONFIG_DIR/pdfpc/pdfpcrc.
-If $XDG_CONFIG_DIR is not set, it uses $HOME/.config .</p>
 
-
-<p style="margin-left:11%; margin-top: 1em"><b>Keybindings</b>
-<br>
-Following commands are aceepted: <b><br>
-bind &lt;key&gt; &lt;func&gt;</b></p>
-
-<p style="margin-left:22%;">Bind a key to a function</p>
-
-<p style="margin-left:11%;"><b>unbind &lt;key&gt;</b></p>
-
-<p style="margin-left:22%;">Unbinds the given key</p>
-
-<p style="margin-left:11%;"><b>unbind_all</b></p>
-
-<p style="margin-left:22%;">Unbinds all the keybindings</p>
-
-<p style="margin-left:11%;"><b>mouse &lt;button&gt;
-&lt;func&gt;</b></p>
-
-<p style="margin-left:22%;">Binds a mouse button to a
-function</p>
-
-<p style="margin-left:11%;"><b>unmouse
-&lt;button&gt;</b></p>
-
-<p style="margin-left:22%;">Unbinds a mouse button</p>
-
-<p style="margin-left:11%;"><b>unmouse_all</b></p>
-
-<p style="margin-left:22%;">Unbinds all the mouse
-bindings</p>
-
-<p style="margin-left:11%; margin-top: 1em">Key names can
-be obtained with the help of the xev utility. Note that
-names are case sensitive. Modifiers can be specified in the
-form &lt;mod&gt;+&lt;key&gt; where &lt;mod&gt; is one of S
-(for shift), C (for control) and A/M (for Alt/Meta). E.g.
-<br>
-bind S+Next next10</p>
-
-<p style="margin-left:11%; margin-top: 1em">A shorthand for
-specifying key combinations constituting shift and an
-alphabetic character is to simply give the uppercase version
-of the alphabetic character. For example, to bind
-&lt;shift&gt;+r to the &rsquo;reset&rsquo; function, use
-<br>
-bind R reset</p>
-
-<p style="margin-left:11%; margin-top: 1em">A list of all
-possible functions can be obtained via the &minus;L command
-line option if pdfpc(1).</p>
-
-<p style="margin-left:11%; margin-top: 1em"><b>Options</b>
-<br>
-Some permanent changes can be configured via config file.
-The syntax is: <b><br>
-option &lt;option_name&gt; &lt;option_value&gt;</b></p>
-
-<p style="margin-left:11%; margin-top: 1em">The following
-option_name are allowed: <b><br>
-current-size</b></p>
-
-<p style="margin-left:22%;">Percentage of the presenter
-screen to be used for the current slide. (int, Default
-60)</p>
-
-<p style="margin-left:11%;"><b>current-height</b></p>
-
-<p style="margin-left:22%;">Percentage of the height of the
-presenter screen to be used for the current slide. (int,
-Default 80)</p>
-
-<p style="margin-left:11%;"><b>next-height</b></p>
-
-<p style="margin-left:22%;">Percentage of the height of the
-presenter screen to be used for the next slide. (int,
-Default 70)</p>
-
-<p style="margin-left:11%;"><b>overview-min-size</b></p>
-
-<p style="margin-left:22%;">Minimum width for the overview
-miniatures, in pixels. (int, Default 150)</p>
-
-<p style="margin-left:11%;"><b>black-on-end</b></p>
-
-<p style="margin-left:22%;">Add an additional black slide
-at the end of the presentation (bool, Default false)</p>
-
-<p style="margin-left:11%;"><b>switch-screens</b></p>
-
-<p style="margin-left:22%;">Switch the presentation and the
-presenter screen. (bool, Default false)</p>
-
-<h2>SEE ALSO
-<a name="SEE ALSO"></a>
-</h2>
-
- 
-<p style="margin-left:11%; margin-top: 1em">pdfpc(1)</p>
-</body>
-</html>
+                                                                    <B>PDFPCRC(5)</B>
+</PRE>
+<HR>
+<ADDRESS>
+Man(1) output converted with
+<a href="http://www.oac.uci.edu/indiv/ehood/man2html.html">man2html</a>
+</ADDRESS>
+</BODY>
+</HTML>
