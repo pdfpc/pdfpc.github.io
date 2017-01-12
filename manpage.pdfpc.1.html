@@ -21,7 +21,7 @@
        be created using nearly all modern presentation software.
 
        By  default  the  presenter view appears in the primary monitor and the
-       presentation view in the second monitor (provided you  have  two  moni‐
+       presentation view in the second monitor (provided you  have  two  moni-
        tors).
 
 
@@ -61,15 +61,19 @@
               right, top or  bottom.  Disable  slide  auto-grouping  (Default:
               none)
 
+       <B>-t,</B> <B>--start-time</B><I>=T</I>
+              Start time of the presentation to be used as a countdown.  (For-
+              mat: HH:MM (24h))
+
        <B>-w,</B> <B>--windowed</B>
               Run in windowed mode
 
        <B>-z,</B> <B>--disable-compression</B>
-              Disable the compression of slide images to trade memory consump‐
+              Disable the compression of slide images to trade memory consump-
               tion for speed.  (Avg.  factor 30)
 
        <B>-Z,</B> <B>--size</B>
-              Size  of  the presentation window in width:height format (forces
+              Size of the presentation window in width:height  format  (forces
               windowed mode)
 
 
@@ -81,7 +85,7 @@
        <B>Right</B> <B>cursor</B> <B>key</B> <B>/</B> <B>Page</B> <B>down</B> <B>/</B> <B>Return</B> <B>/</B> <B>Space</B> <B>/</B> <B>Left</B> <B>mouse</B> <B>button</B>
               Go forward one slide
 
-       <B>Shift</B> <B>+</B> <B>Right</B> <B>cursor</B> <B>key</B> <B>/</B> <B>Page</B> <B>down</B> <B>/</B> <B>Return</B> <B>/</B> <B>Space</B> <B>/</B> <B>Left</B> <B>mouse</B> <B>but</B>�<B>�</B>��
+       <B>Shift</B> <B>+</B> <B>Right</B> <B>cursor</B> <B>key</B> <B>/</B> <B>Page</B> <B>down</B> <B>/</B> <B>Return</B> <B>/</B> <B>Space</B> <B>/</B> <B>Left</B> <B>mouse</B> <B>but-</B>
        <B>ton</B> <B>/</B> <B>Mouse</B> <B>wheel</B> <B>down</B> <B>or</B> <B>right</B>
               Go forward 10 slides
 
@@ -102,7 +106,7 @@
        <B>End</B>    Go to the last slide
 
        <B>Backspace</B>
-              Go  back in history. Note that history is defined by "jump" com‐
+              Go back in history. Note that history is defined by "jump"  com-
               mands, not by normal slide movement.
 
        <B>Tab</B> <B>/</B> <B>Middle</B> <B>mouse</B> <B>button</B>
@@ -111,15 +115,15 @@
        <B>g</B>      Input a slide number to jump to
 
        <B>Plus</B> <B>/</B> <B>Equal</B> <B>/</B> <B>KP_Add</B> <B>/</B> <B>Bracket</B> <B>Left</B>
-              Increase Notes Font Size
+       <B>b</B>      Turn  off  the  presentation  view  (i.e.   fill it with a black
+              color)
 
-       <B>Minus</B> <B>/</B> <B>KP_Substract</B> <B>/</B> <B>Bracket</B> <B>Right</B>
-              Decrease Notes Font Size
+       <B>n</B>      Edit note for current slide
 
-       <B>f</B>      Freeze  the  current presentation display (the presenter display
+       <B>f</B>      Freeze the current presentation display (the  presenter  display
               is still fully active)
 
-       <B>o</B>      Toggle the overlay flag for one particular slide  (see  Overlays
+       <B>o</B>      Toggle  the  overlay flag for one particular slide (see Overlays
               below)
 
        <B>p</B>      Pause timer
@@ -151,13 +155,13 @@
 </PRE>
 <H2>FEATURES</H2><PRE>
    <B>Caching</B> <B>/</B> <B>Pre-rendering</B>
-       To  allow fast changes between the different slides of the presentation
-       the PDF pages are pre-rendered to memory.  The progress bar on the bot‐
-       tom  of  the  presenter screen indicates how many percent of the slides
-       have been pre-rendered already.  During  the  initial  rendering  phase
-       this  will  slow  down slide changes, as most CPU power is used for the
-       rendering process in the background.  After the cache is  fully  primed
-       however  the  changing  of slides should be much faster, as with normal
+       To allow fast changes between the different slides of the  presentation
+       the PDF pages are pre-rendered to memory.  The progress bar on the bot-
+       tom of the presenter screen indicates how many percent  of  the  slides
+       have  been  pre-rendered  already.   During the initial rendering phase
+       this will slow down slide changes, as most CPU power is  used  for  the
+       rendering  process  in the background.  After the cache is fully primed
+       however the changing of slides should be much faster,  as  with  normal
        PDF viewers.
 
 
@@ -165,122 +169,126 @@
        --disable-cache switch at the cost of speed.
 
 
-       It  it  also possible to store the pre-rendered slides on the disk (see
-       --persist-cache).  This speeds up the  start  of  the  program  if  the
-       slide-set is used for a second time.
-
+       can disable slide compression by using the -z  switch.  But  be  warned
+       using  the  uncompressed  pre-rendering storage will use about 30 times
+       the memory the new compressed storage utilizes (e.g. 50 MB will  become
+       about 1.5 GB).
 
 
    <B>Timer</B>
-       If a duration is given (-d option), the timer  will  show  a  countdown
-       with  the given parameters.  If no duration is specified (or if a value
-       of 0 is given to the -d option), the timer will show how much time  has
-       been  spent.   The duration is stored automatically, so you do not need
+       If  a  duration  is  given (-d option), the timer will show a countdown
+       with the given parameters.  If no duration is specified (or if a  value
+       of  0 is given to the -d option), the timer will show how much time has
+       been spent.  The duration is stored automatically, so you do  not  need
        to repeat it for every invocation.
 
 
        The timer is started if you are navigating away from the first page for
-       the  first  time.  This feature is quite useful as you may want to show
+       the first time.  This feature is quite useful as you may want  to  show
        the title page of your presentation while people are still entering the
-       room  and  the  presentation  has not really begun yet.  If you want to
-       start over you can use the 'r' key which will make the presenter  reset
+       room and the presentation has not really begun yet.   If  you  want  to
+       start  over you can use the 'r' key which will make the presenter reset
        the timer.
 
 
-       If  a  duration  is  given, at the moment the timer reaches the defined
-       last-minutes value it will change color to indicate your talk is  near‐
-       ing  its end.  As soon as the timer reaches the zero mark (00:00:00) it
-       will turn red and count further down showing a negative time,  to  pro‐
+       If a duration is given, at the moment the  timer  reaches  the  defined
+       last-minutes  value it will change color to indicate your talk is near-
+       ing its end.  As soon as the timer reaches the zero mark (00:00:00)  it
+       will  turn  red and count further down showing a negative time, to pro-
        vide information on how many minutes you are overtime.
 
 
    <B>Notes</B>
-       Textual  notes can be displayed for each slide.  While in the presenta‐
-       tion, pressing 'n' will allow you to take notes for the screen.  To  go
-       out  of  editing mode, press the Escape key.  Note that while editing a
-       note the keybindings stop working, i.e.  you are  not  able  to  change
+       Textual notes can be displayed for each slide.  While in the  presenta-
+       tion,  pressing 'n' will allow you to take notes for the screen.  To go
+       out of editing mode, press the Escape key.  Note that while  editing  a
+       note  the  keybindings  stop  working, i.e.  you are not able to change
        slides.
 
 
-       The  notes are stored in the given file in a plain text format, easy to
-       edit also from outside the program.  See the section  about  the  pdfpc
+       The notes are stored in the given file in a plain text format, easy  to
+       edit  also  from  outside the program.  See the section about the pdfpc
        format below.
 
 
    <B>Overview</B> <B>mode</B>
-       Pressing  tab you can enter the overview mode, where miniatures for the
-       slides are shown.  You can select one slide to jump to with  the  mouse
+       Pressing tab you can enter the overview mode, where miniatures for  the
+       slides  are  shown.  You can select one slide to jump to with the mouse
        or with the arrow keys.  You can also define overlays and the end slide
        (see next sections) in this mode.
 
 
    <B>Overlays</B>
        Many slide preparation systems allow for overlays, i.e.  sets of slides
-       that are logically grouped together as a single, changing slide.  Exam‐
-       ples include enumerations where the  single  items  are  displayed  one
-       after  another  or  rough "animations", where parts of a picture change
-       from slide to slide. Pdfpc includes facilities for  dealing  with  such
-       overlays.
+       that are logically grouped together as a single, changing slide.  Exam-
 
-       · If the current slide is not part of an overlay (or if it is the first
-         one), but the previous slides are,  we  jump  to  the  previous  user
-         slide.   This  means  that when going back in the presentation you do
-         not have to go through every step of the overlay,  pdfpc  just  shows
+       <B>o</B> If the current slide is part of an overlay we just jump to the previ-
+         ous slide.  That means that we are in the middle of an overlay we can
+         jump forward and backward through the single steps of it
+
+       <B>o</B> If the current slide is not part of an overlay (or if it is the first
+         one),  but  the  previous  slides  are,  we jump to the previous user
+         slide.  This means that when going back in the  presentation  you  do
+         not  have  to  go through every step of the overlay, pdfpc just shows
          the first slide of the each overlay.  As you normally only go back in
-         a presentation when looking for a concrete slide, this is more conve‐
+         a presentation when looking for a concrete slide, this is more conve-
          nient.
 
 
-       The  up  and  down cursor keys work on a user slide basis.  You can use
-       them to skip the rest of an overlay or to jump  to  the  previous  user
+       The up and down cursor keys work on a user slide basis.   You  can  use
+       them  to  skip  the  rest of an overlay or to jump to the previous user
        slide, ignoring the state of the current slide.
 
 
        When going through an overlay, two additional previews may be activated
-       in the presenter view, just below the main view, showing the  next  and
+       in  the  presenter view, just below the main view, showing the next and
        the previous slide in an overlay.
 
 
-       Pdfpc  tries  to  find these overlays automatically by looking into the
-       page labels in the PDF file.  For LaTeX this works correctly  at  least
-       with  the  beamer  class  and  also modifying the page numbers manually
-       (compiling with pdflatex).  If your  preferred  slide-producing  method
-       does not work correctly with this detection, you can supply this infor‐
-       mation using the 'o' key for each slide that  is  part  of  an  overlay
-       (except  the  first  one!).   The page numbering is also adapted.  This
+       Pdfpc tries to find these overlays automatically by  looking  into  the
+       page  labels  in the PDF file.  For LaTeX this works correctly at least
+       with the beamer class and also  modifying  the  page  numbers  manually
+       (compiling  with  pdflatex).   If your preferred slide-producing method
+       does not work correctly with this detection, you can supply this infor-
+       mation  using  the  'o'  key  for each slide that is part of an overlay
+       (except the first one!).  The page numbering  is  also  adapted.   This
        information is automatically stored.
 
 
    <B>End</B> <B>slide</B>
-       Some people like to have some additional, backup slides after the  last
+       Some  people like to have some additional, backup slides after the last
        slide in the actual presentation.  Things like bibliographic references
-       or slides referring to  specialized  questions  are  typical  examples.
-       Pdfpc  lets  you define which is the last slide in the actual presenta‐
-       tion via the 'e' key.  This just changes the progress  display  in  the
-       presenter  screen,  as to have a better overview of how many slides are
+       or  slides  referring  to  specialized  questions are typical examples.
+       Pdfpc lets you define which is the last slide in the  actual  presenta-
+       tion  via  the  'e' key.  This just changes the progress display in the
+       presenter screen, as to have a better overview of how many  slides  are
        left.
 
 
    <B>Movies</B>
-       Pdfpc can play back movies included in the PDF  file.   Movies  may  be
-       started  and stopped by clicking within their area.  For the presenter,
-       a progress bar is drawn along the bottom of the  movie.   This  expands
-       when  the  mouse  hovers  over  it, allowing one to seek by clicking or
+       Pdfpc  can  play  back  movies included in the PDF file.  Movies may be
+       started and stopped by clicking within their area.  For the  presenter,
+       a  progress  bar  is drawn along the bottom of the movie.  This expands
+       when the mouse hovers over it, allowing one  to  seek  by  clicking  or
        dragging within the progress bar.  Switching slides automatically stops
-       playback,  and  movies  will  be reset after leaving and returning to a
+       playback, and movies will be reset after leaving  and  returning  to  a
        slide.
+       "movie.avi?autostart&amp;loop&amp;noprogress" will  add  a  video  that  starts
+       playing automatically, loops when it reaches the end, and does not show
+       the progress bar.)
 
-
-       Movies may be included in PDF files  as  "screen  annotations".   pdfpc
-       does  not yet support options that modify the playback of these movies.
        In LaTeX, such links are created with
 
               \usepackage{hyperref}
               \href{run:&lt;movie file&gt;}{&lt;placeholder content&gt;}
 
 
-       The  movie  will playback in the area taken by the placeholder content.
+       The movie will playback in the area taken by the  placeholder  content.
        Using a frame of the movie will ensure the correct aspect ratio.
+
+
+       See  our  website &lt;http://pdfpc.github.io/demo/pdfpc-video-example.zip&gt;
+       for a full example.
 
 
    <B>Pointer</B> <B>Mode</B>
@@ -294,7 +302,7 @@
 
    <B>pdfpc</B> <B>Files</B>
        The  notes  and  other additional information are stored in a file with
-       the extension "pdfpc".  When pdfpc is invoked with a PDF file, it auto‐
+       the extension "pdfpc".  When pdfpc is invoked with a PDF file, it auto-
        matically checks for and loads the associated pdfpc file, if it exists.
        This means that you normally do not have to  deal  with  this  kind  of
        files explicitly.
@@ -308,30 +316,30 @@
        The  files are plain-text files that should be fairly self-explanatory.
        A couple of things to note:
 
-       · The slide numbers of the notes refer to user slides
+       <B>o</B> The slide numbers of the notes refer to user slides
 
-       · The [notes] sections must be the last one in the file
+       <B>o</B> The [notes] sections must be the last one in the file
 
-       · For the programmers out there: slide indexes start at 1
+       <B>o</B> For the programmers out there: slide indexes start at 1
 
 
    <B>Appearance</B>
        With GTK3 it is possible to modify the appearance of pdfpc.  There  are
-       two locations where pdfpc is looking for files. The default location is
-       @CMAKE_INSTALL_PREFIX@/share/pixmaps/pdfpc/pdfpc.css. A user  can  copy
-       it  to $XDG_CONFIG_HOME/pdfpc/pdfpc.css and change the attributes as he
-       likes.
+       it. It should not be too important for up to some hundreds of slides.
+
+
+       Other bugs can be reported at the issue tracker &lt;https://github.com/
+       pdfpc/pdfpc/issues&gt;.
 
 
 
 </PRE>
-<H2>INTEGRATION WITH OTHER TOOLS</H2><PRE>
-       Pdfpc provides a dbus interface that other tools can use to execute any
-       pdfpc was previously developed by davvil ⟨https://github.com/davvil/
-       pdfpc⟩.
+<H2>ACKNOWLEDGEMENTS</H2><PRE>
+       pdfpc was previously developed by davvil &lt;https://github.com/davvil/
+       pdfpc&gt;.
 
-       pdfpc is a fork of Pdf Presenter Console, available online ⟨https://
-       github.com/jakobwesthoff/Pdf-Presenter-Console⟩.
+       pdfpc is a fork of Pdf Presenter Console, available online &lt;https://
+       github.com/jakobwesthoff/Pdf-Presenter-Console&gt;.
 
 
 
@@ -339,6 +347,24 @@
 <H2>SEE ALSO</H2><PRE>
        <B>pdfpcrc(5)</B>
 
+       There are several other programs with similar functionality.
+
+       <B>impressive(1)</B> has nice transition effects.
+
+       <B>hpdfp(1)</B> is the Haskell PDF Presenter &lt;http://michaeldadams.org/
+       projects/haskell-pdf-presenter/&gt;  program, which packs an amazing level
+       of functionality into not many lines of Haskell.
+
+       <B>pympress(1)</B> is a little PDF reader written in Python &lt;https://
+       github.com/Cimbali/pympress&gt;  which  handles  dual  screens  and beamer
+       notes.
+
+       <B>dspdfviewer(1)</B> is also specialized for beamer-produced  wide  PDF  with
+       notes.
+
+       Many PDF viewers have full-screen presentation modes, but without dual-
+       monitor  preview  or  notes  or  a  timer.  These  include  <B>zathura(1)</B>,
+       <B>evince(1)</B>, and <B>okular(1)</B>.
 
 
 
