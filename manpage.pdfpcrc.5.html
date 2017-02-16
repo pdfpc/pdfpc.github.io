@@ -39,6 +39,43 @@
               Unbinds all the mouse bindings
 
 
+       A  list  of  all  possible functions can be obtained via the -L command
+       line option if <B>pdfpc(1)</B>.
+
+
+   <B>Options</B>
+       Some permanent changes can be configured via config  file.  The  syntax
+       is:
+
+       <B>option</B> <B>&lt;option_name&gt;</B> <B>&lt;option_value&gt;</B>
+
+
+       The following option_name are allowed:
+
+
+       <B>black-on-end</B>
+              Add  an  additional  black  slide at the end of the presentation
+              (bool, Default false)
+
+       <B>current-height</B>
+              Percentage of the height of the presenter screen to be used  for
+              the next slide. (int, Default 70)
+
+       <B>overview-min-size</B>
+              Minimum  width  for  the  overview  miniatures, in pixels. (int,
+              Default 150)
+
+       <B>switch-screens</B>
+              Switch the presentation and the presenter screen. (bool, Default
+              false)
+
+       <B>time-of-day</B>
+              see <B>pdfpcrc(5)</B>
+
+
+
+</PRE>
+<H2>EXAMPLES</H2><PRE>
        Key  names  can be obtained with the help of the xev utility. Note that
        names are case sensitive.  Modifiers  can  be  specified  in  the  form
        &lt;mod&gt;+&lt;key&gt;  where  &lt;mod&gt;  is one of S (for shift), C (for control) and
@@ -55,29 +92,11 @@
               bind R reset
 
 
-       A  list  of  all  possible functions can be obtained via the -L command
-       line option if <B>pdfpc(1)</B>.
 
+       To always activate the black-on-end option, one could add the following
+       to the config file
 
-       <B>current-height</B>
-              Percentage of the height of the presenter screen to be used  for
-              the current slide. (int, Default 80)
-
-       <B>next-height</B>
-              Percentage  of the height of the presenter screen to be used for
-              the next slide. (int, Default 70)
-
-       <B>overview-min-size</B>
-              Minimum width for the  overview  miniatures,  in  pixels.  (int,
-              Default 150)
-
-       <B>black-on-end</B>
-              Add  an  additional  black  slide at the end of the presentation
-              (bool, Default false)
-
-       <B>switch-screens</B>
-              Switch the presentation and the presenter screen. (bool, Default
-              false)
+              option black-on-end true
 
 
 
