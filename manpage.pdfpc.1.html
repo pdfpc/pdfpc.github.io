@@ -1,5 +1,5 @@
 <!-- Creator     : groff version 1.22.3 -->
-<!-- CreationDate: Sun Feb 19 13:34:21 2017 -->
+<!-- CreationDate: Sun Jun 25 13:58:45 2017 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -20,17 +20,6 @@
 
 <h1 align="center">PDFPC</h1>
 
-<a href="#NAME">NAME</a><br>
-<a href="#SYNOPSIS">SYNOPSIS</a><br>
-<a href="#DESCRIPTION">DESCRIPTION</a><br>
-<a href="#OPTIONS">OPTIONS</a><br>
-<a href="#KEYBINDINGS">KEYBINDINGS</a><br>
-<a href="#FEATURES">FEATURES</a><br>
-<a href="#BUGS">BUGS</a><br>
-<a href="#ACKNOWLEDGEMENTS">ACKNOWLEDGEMENTS</a><br>
-<a href="#SEE ALSO">SEE ALSO</a><br>
-
-<hr>
 
 
 <h2>NAME
@@ -259,6 +248,23 @@ slide&quot; (see <b>Overlays</b> below)</p>
 history is defined by &quot;jump&quot; commands, not by
 normal slide movement.</p>
 
+<table width="100%" border="0" rules="none" frame="void"
+       cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="7%">
+
+
+<p><b>j / k</b></p></td>
+<td width="4%"></td>
+<td width="78%">
+
+
+<p>Go to the previous / next slide, skipping over overlays
+that have already been viewed, but at most one user
+slide.</p> </td></tr>
+</table>
+
 <p style="margin-left:11%;"><b>Tab / Middle mouse
 button</b></p>
 
@@ -421,6 +427,30 @@ slide)</p> </td></tr>
 
 
 <p>Define end slide</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>R</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Restore last saved session. Goto the slide which was
+saved with <b>S</b> before</p></td></tr>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+
+<p><b>S</b></p></td>
+<td width="10%"></td>
+<td width="78%">
+
+
+<p>Save the current session. Store the current slide in the
+<b>.pdfpc</b> file for later usage</p></td></tr>
 </table>
 
 <p style="margin-left:11%; margin-top: 1em">Within overview
@@ -819,9 +849,9 @@ refer to user slides</p></td>
 With GTK3 it is possible to modify the appearance of pdfpc.
 There are two locations where pdfpc is looking for files.
 The default location is
-@CMAKE_INSTALL_PREFIX@/share/pixmaps/pdfpc/pdfpc.css. A user
-can copy it to $XDG_CONFIG_HOME/pdfpc/pdfpc.css and change
-the attributes as he likes.</p>
+/usr/local/share/pixmaps/pdfpc/pdfpc.css. A user can copy it
+to $XDG_CONFIG_HOME/pdfpc/pdfpc.css and change the
+attributes as he likes.</p>
 
 <p style="margin-left:11%; margin-top: 1em"><b>Integration
 with other tools</b> <br>
@@ -889,6 +919,5 @@ viewers have full-screen presentation modes, but without
 dual-monitor preview or notes or a timer. These include
 <b>zathura</b>(1), <b>evince</b>(1), and
 <b>okular</b>(1).</p>
-<hr>
 </body>
 </html>
