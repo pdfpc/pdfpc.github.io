@@ -1,5 +1,5 @@
 <!-- Creator     : groff version 1.22.3 -->
-<!-- CreationDate: Sun Jun 25 13:58:59 2017 -->
+<!-- CreationDate: Fri Aug 25 14:05:42 2017 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -53,9 +53,11 @@ If $XDG_CONFIG_DIR is not set, it uses $HOME/.config .</p>
 <p style="margin-left:11%; margin-top: 1em"><b>Keybindings</b>
 <br>
 Following commands are aceepted: <b><br>
-bind &lt;key&gt; &lt;func&gt;</b></p>
+bind &lt;key&gt; &lt;func&gt; [&lt;arg&gt;]</b></p>
 
-<p style="margin-left:22%;">Bind a key to a function</p>
+<p style="margin-left:22%;">Bind a key to a function,
+passing a specified argument for functions which require
+one</p>
 
 <p style="margin-left:11%;"><b>unbind &lt;key&gt;</b></p>
 
@@ -104,6 +106,12 @@ at the end of the presentation (bool, Default false)</p>
 presenter screen to be used for the current slide. (int,
 Default 80)</p>
 
+<p style="margin-left:11%;"><b>current-size</b></p>
+
+<p style="margin-left:22%;">Percentage of the presenter
+screen to be used for the current slide. (int, Default
+60)</p>
+
 <p style="margin-left:11%;"><b>disable-caching</b></p>
 
 <p style="margin-left:22%;">see <b>pdfpcrc(5)</b></p>
@@ -111,12 +119,6 @@ Default 80)</p>
 <p style="margin-left:11%;"><b>disable-compression</b></p>
 
 <p style="margin-left:22%;">see <b>pdfpcrc(5)</b></p>
-
-<p style="margin-left:11%;"><b>current-size</b></p>
-
-<p style="margin-left:22%;">Percentage of the presenter
-screen to be used for the current slide. (int, Default
-60)</p>
 
 <p style="margin-left:11%;"><b>next-height</b></p>
 
