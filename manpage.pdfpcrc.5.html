@@ -1,5 +1,5 @@
 <!-- Creator     : groff version 1.22.3 -->
-<!-- CreationDate: Fri Aug 25 14:05:42 2017 -->
+<!-- CreationDate: Mon Oct 30 10:38:46 2017 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -36,7 +36,7 @@ pdfpc configuration file</p>
 
 
 
-<p style="margin-left:11%; margin-top: 1em"><b>/usr/local/etc/pdfpcrc
+<p style="margin-left:11%; margin-top: 1em"><b>@SYSCONFDIR@/pdfpcrc
 / $XDG_CONFIG_DIR/pdfpc/pdfpcrc</b></p>
 
 <h2>DESCRIPTION
@@ -45,14 +45,14 @@ pdfpc configuration file</p>
 
 
 <p style="margin-left:11%; margin-top: 1em">pdfpc(1) reads
-its configuration file from /usr/local/etc/pdfpcrc. It also
-reads, if present, the file $XDG_CONFIG_DIR/pdfpc/pdfpcrc.
-If $XDG_CONFIG_DIR is not set, it uses $HOME/.config .</p>
+its configuration from @SYSCONFDIR@/pdfpcrc. It also reads
+$XDG_CONFIG_DIR/pdfpc/pdfpcrc if this file exists (if
+$XDG_CONFIG_DIR is not set, $HOME/.config will be used).</p>
 
 
 <p style="margin-left:11%; margin-top: 1em"><b>Keybindings</b>
 <br>
-Following commands are aceepted: <b><br>
+The following commands are accepted: <b><br>
 bind &lt;key&gt; &lt;func&gt; [&lt;arg&gt;]</b></p>
 
 <p style="margin-left:22%;">Bind a key to a function,
@@ -61,40 +61,40 @@ one</p>
 
 <p style="margin-left:11%;"><b>unbind &lt;key&gt;</b></p>
 
-<p style="margin-left:22%;">Unbinds the given key</p>
+<p style="margin-left:22%;">Unbind the given key</p>
 
 <p style="margin-left:11%;"><b>unbind_all</b></p>
 
-<p style="margin-left:22%;">Unbinds all the keybindings</p>
+<p style="margin-left:22%;">Clear all the key bindings</p>
 
 <p style="margin-left:11%;"><b>mouse &lt;button&gt;
 &lt;func&gt;</b></p>
 
-<p style="margin-left:22%;">Binds a mouse button to a
+<p style="margin-left:22%;">Bind a mouse button to a
 function</p>
 
 <p style="margin-left:11%;"><b>unmouse
 &lt;button&gt;</b></p>
 
-<p style="margin-left:22%;">Unbinds a mouse button</p>
+<p style="margin-left:22%;">Unbind a mouse button</p>
 
 <p style="margin-left:11%;"><b>unmouse_all</b></p>
 
-<p style="margin-left:22%;">Unbinds all the mouse
+<p style="margin-left:22%;">Clear all the mouse
 bindings</p>
 
 <p style="margin-left:11%; margin-top: 1em">A list of all
 possible functions can be obtained via the &minus;L command
-line option if pdfpc(1).</p>
+line option of pdfpc(1).</p>
 
 <p style="margin-left:11%; margin-top: 1em"><b>Options</b>
 <br>
-Some permanent changes can be configured via config file.
-The syntax is: <b><br>
+Some permanent changes can be configured via the config
+file. The syntax is: <b><br>
 option &lt;option_name&gt; &lt;option_value&gt;</b></p>
 
 <p style="margin-left:11%; margin-top: 1em">The following
-option_name are allowed: <b><br>
+option_name&rsquo;s are recognized: <b><br>
 black-on-end</b></p>
 
 <p style="margin-left:22%;">Add an additional black slide
@@ -114,11 +114,16 @@ screen to be used for the current slide. (int, Default
 
 <p style="margin-left:11%;"><b>disable-caching</b></p>
 
-<p style="margin-left:22%;">see <b>pdfpcrc(5)</b></p>
+<p style="margin-left:22%;">see <b>pdfpc(1)</b></p>
 
 <p style="margin-left:11%;"><b>disable-compression</b></p>
 
-<p style="margin-left:22%;">see <b>pdfpcrc(5)</b></p>
+<p style="margin-left:22%;">see <b>pdfpc(1)</b></p>
+
+<p style="margin-left:11%;"><b>disable-scrolling</b></p>
+
+<p style="margin-left:22%;">Disable scrolling events on the
+presenter window (bool, Default false)</p>
 
 <p style="margin-left:11%;"><b>next-height</b></p>
 
@@ -138,7 +143,15 @@ presenter screen. (bool, Default false)</p>
 
 <p style="margin-left:11%;"><b>time-of-day</b></p>
 
-<p style="margin-left:22%;">see <b>pdfpcrc(5)</b></p>
+<p style="margin-left:22%;">see <b>pdfpc(1)</b></p>
+
+<p style="margin-left:11%;"><b>timer-pace-color</b></p>
+
+<p style="margin-left:22%;">Enable color hints of the
+timer, continuously indicating whether the presentation is
+progressing according to the expected pace (bool, Default
+true). See the timer operation description in
+<b>pdfpc(1).</b></p>
 
 <h2>EXAMPLES
 <a name="EXAMPLES"></a>
