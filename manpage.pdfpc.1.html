@@ -1,5 +1,5 @@
-<!-- Creator     : groff version 1.22.3 -->
-<!-- CreationDate: Mon Oct 30 10:38:39 2017 -->
+<!-- Creator     : groff version 1.19.2 -->
+<!-- CreationDate: Wed May  2 20:56:26 2018 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,39 +8,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
 <meta name="Content-Style" content="text/css">
 <style type="text/css">
-       p       { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       pre     { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       table   { margin-top: 0; margin-bottom: 0; vertical-align: top }
-       h1      { text-align: center }
+       p     { margin-top: 0; margin-bottom: 0; }
+       pre   { margin-top: 0; margin-bottom: 0; }
+       table { margin-top: 0; margin-bottom: 0; }
 </style>
 <title>PDFPC</title>
 
 </head>
 <body>
 
-<h1 align="center">PDFPC</h1>
+<h1 align=center>PDFPC</h1>
 
 
 
-<h2>NAME
 <a name="NAME"></a>
-</h2>
+<h2>NAME</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em">pdfpc &minus;
 PDF presenter console with multi-monitor support</p>
 
-<h2>SYNOPSIS
 <a name="SYNOPSIS"></a>
-</h2>
+<h2>SYNOPSIS</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em"><b>pdfpc</b>
 [options] PDF-file</p>
 
-<h2>DESCRIPTION
 <a name="DESCRIPTION"></a>
-</h2>
+<h2>DESCRIPTION</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em">pdfpc is a
@@ -59,9 +55,8 @@ presenter view appears in the primary monitor and the
 presentation view in the second monitor (provided you have
 two monitors).</p>
 
-<h2>OPTIONS
 <a name="OPTIONS"></a>
-</h2>
+<h2>OPTIONS</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em"><b>&minus;c,
@@ -156,6 +151,12 @@ screen</p>
 <p style="margin-left:22%;">Start time of the presentation
 to be used as a countdown. (Format: HH:MM (24h))</p>
 
+<p style="margin-left:11%;"><b>&minus;W,
+&minus;&minus;wayland&minus;workaround</b></p>
+
+<p style="margin-left:22%;">Enable Wayland-specific
+workaround. This might fix HiDPI scaling problems.</p>
+
 <p style="margin-left:11%;"><b>&minus;w,
 &minus;&minus;windowed</b></p>
 
@@ -179,9 +180,8 @@ command-line options (like black-on-end) were moved to
 permanent config file options. See <b>pdfpcrc(5)</b> for
 further details.</p>
 
-<h2>KEYBINDINGS
 <a name="KEYBINDINGS"></a>
-</h2>
+<h2>KEYBINDINGS</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em">These are the
@@ -217,34 +217,36 @@ Page up / Right mouse button</b></p>
 <p style="margin-left:22%;">Go back one user slide (see
 <b>Overlays</b> below)</p>
 
-<table width="100%" border="0" rules="none" frame="void"
+<table width="100%" border=0 rules="none" frame="void"
        cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="6%">
 
 
-<p><b>Home</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>Home</b></p></td>
 <td width="5%"></td>
 <td width="32%">
 
 
-<p>Go to the first slide</p></td>
+<p style="margin-top: 1em" valign="top">Go to the first
+slide</p> </td>
 <td width="46%">
-</td></tr>
+</td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="6%">
 
 
-<p><b>End</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>End</b></p></td>
 <td width="5%"></td>
 <td width="32%">
 
 
-<p>Go to the last slide</p></td>
+<p style="margin-top: 1em" valign="top">Go to the last
+slide</p> </td>
 <td width="46%">
-</td></tr>
+</td>
 </table>
 
 <p style="margin-left:11%;"><b>Backspace</b></p>
@@ -253,21 +255,21 @@ Page up / Right mouse button</b></p>
 history is defined by &quot;jump&quot; commands, not by
 normal slide movement.</p>
 
-<table width="100%" border="0" rules="none" frame="void"
+<table width="100%" border=0 rules="none" frame="void"
        cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="7%">
 
 
-<p><b>j / k</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>j / k</b></p></td>
 <td width="4%"></td>
 <td width="78%">
 
 
-<p>Go to the previous / next slide, skipping over overlays
-that have already been viewed, but at most one user
-slide.</p> </td></tr>
+<p style="margin-top: 1em" valign="top">Go to the previous
+/ next slide, skipping over overlays that have already been
+viewed, but at most one user slide.</p></td>
 </table>
 
 <p style="margin-left:11%;"><b>Tab / Middle mouse
@@ -275,21 +277,22 @@ button</b></p>
 
 <p style="margin-left:22%;">Overview mode</p>
 
-<table width="100%" border="0" rules="none" frame="void"
+<table width="100%" border=0 rules="none" frame="void"
        cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>g</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>g</b></p></td>
 <td width="10%"></td>
 <td width="47%">
 
 
-<p>Input a slide number to jump to</p></td>
+<p style="margin-top: 1em" valign="top">Input a slide
+number to jump to</p></td>
 <td width="31%">
-</td></tr>
+</td>
 </table>
 
 <p style="margin-left:11%;"><b>Plus / Equal / KP_Add /
@@ -302,233 +305,247 @@ Bracket Right</b></p>
 
 <p style="margin-left:22%;">Decrease font size of notes</p>
 
-<table width="100%" border="0" rules="none" frame="void"
+<table width="100%" border=0 rules="none" frame="void"
        cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>8</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>8</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Toggle pointer mode</p></td></tr>
+<p style="margin-top: 1em" valign="top">Toggle pointer
+mode</p> </td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>7</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>7</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Decrease pointer size</p></td></tr>
+<p style="margin-top: 1em" valign="top">Decrease pointer
+size</p> </td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>9</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>9</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Increase pointer size</p></td></tr>
+<p style="margin-top: 1em" valign="top">Increase pointer
+size</p> </td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>5</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>5</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Toggle drawing mode</p></td></tr>
+<p style="margin-top: 1em" valign="top">Toggle drawing
+mode</p> </td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>6</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>6</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Clear the current drawing</p></td></tr>
+<p style="margin-top: 1em" valign="top">Clear the current
+drawing</p> </td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>4</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>4</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Temporarily hide the current drawing and exit drawing
-mode</p> </td></tr>
+<p style="margin-top: 1em" valign="top">Temporarily hide
+the current drawing and exit drawing mode</p></td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>1</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>1</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Decrease the pen or eraser size for drawing</p></td></tr>
+<p style="margin-top: 1em" valign="top">Decrease the pen or
+eraser size for drawing</p></td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>3</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>3</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Increase the pen or eraser size for drawing</p></td></tr>
+<p style="margin-top: 1em" valign="top">Increase the pen or
+eraser size for drawing</p></td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>2</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>2</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Toggle between the pen and eraser tool for drawing</p></td></tr>
+<p style="margin-top: 1em" valign="top">Toggle between the
+pen and eraser tool for drawing</p></td>
 </table>
 
 <p style="margin-left:11%;"><b>Escape / q</b></p>
 
 <p style="margin-left:22%;">Exit pdfpc</p>
 
-<table width="100%" border="0" rules="none" frame="void"
+<table width="100%" border=0 rules="none" frame="void"
        cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>b</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>b</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Turn off the presentation view (i.e. fill it with a
-black color)</p></td></tr>
+<p style="margin-top: 1em" valign="top">Turn off the
+presentation view (i.e. fill it with a black color)</p></td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>h</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>h</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Hide the presentation window (i.e. make other windows on
-the other screen visible)</p></td></tr>
+<p style="margin-top: 1em" valign="top">Hide the
+presentation window (i.e. make other windows on the other
+screen visible)</p></td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>n</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>n</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Edit note for current slide</p></td></tr>
+<p style="margin-top: 1em" valign="top">Edit note for
+current slide</p></td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>f</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>f</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Freeze the current presentation display (the presenter
-display is still fully active)</p></td></tr>
+<p style="margin-top: 1em" valign="top">Freeze the current
+presentation display (the presenter display is still fully
+active)</p> </td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>o</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>o</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Toggle the overlay flag for one particular slide (see
-Overlays below)</p></td></tr>
+<p style="margin-top: 1em" valign="top">Toggle the overlay
+flag for one particular slide (see Overlays below)</p></td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>p</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>p</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Pause timer</p></td></tr>
+<p style="margin-top: 1em" valign="top">Pause timer</p></td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>r</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>r</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Reset presentation (reset timer and go back to first
-slide)</p> </td></tr>
+<p style="margin-top: 1em" valign="top">Reset presentation
+(reset timer and go back to first slide)</p></td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>e</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>e</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Define end slide</p></td></tr>
+<p style="margin-top: 1em" valign="top">Define end
+slide</p> </td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>R</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>R</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Restore last saved session. Go to the slide which was
-saved with <b>S</b> before</p></td></tr>
+<p style="margin-top: 1em" valign="top">Restore last saved
+session. Go to the slide which was saved with <b>S</b>
+before</p> </td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p><b>S</b></p></td>
+<p style="margin-top: 1em" valign="top"><b>S</b></p></td>
 <td width="10%"></td>
 <td width="78%">
 
 
-<p>Save the current session. Store the current slide in the
-<b>.pdfpc</b> file for later usage</p></td></tr>
+<p style="margin-top: 1em" valign="top">Save the current
+session. Store the current slide in the <b>.pdfpc</b> file
+for later usage</p></td>
 </table>
 
 <p style="margin-left:11%; margin-top: 1em">Within overview
@@ -558,9 +575,8 @@ down</b></p>
 <b>pdfpcrc(5)</b> if you want to customize the
 keybindings.</p>
 
-<h2>FEATURES
 <a name="FEATURES"></a>
-</h2>
+<h2>FEATURES</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em"><b>Caching /
@@ -715,40 +731,41 @@ overlay is traversed. The backward movement command works
 differently depending on whether the current and previous
 slides are part of an overlay:</p>
 
-<table width="100%" border="0" rules="none" frame="void"
+<table width="100%" border=0 rules="none" frame="void"
        cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p>&bull;</p></td>
+<p style="margin-top: 1em" valign="top">&bull;</p></td>
 <td width="2%"></td>
 <td width="86%">
 
 
-<p>If the current slide is part of an overlay we just jump
-to the previous slide. That means that we are in the middle
-of an overlay and can jump forward and backward through the
-single steps of it</p></td></tr>
+<p style="margin-top: 1em" valign="top">If the current
+slide is part of an overlay we just jump to the previous
+slide. That means that we are in the middle of an overlay
+and can jump forward and backward through the single steps
+of it</p></td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p>&bull;</p></td>
+<p style="margin-top: 1em" valign="top">&bull;</p></td>
 <td width="2%"></td>
 <td width="86%">
 
 
-<p>If the current slide is not part of an overlay (or if it
-is the first one), but the previous slides are, we jump to
-the previous user slide. This means that when going back in
-the presentation you do not have to go through every step of
-the overlay, pdfpc just shows the first slide of each
-overlay. As one typically goes back in a presentation only
-when looking for a concrete slide, this is more
-convenient.</p> </td></tr>
+<p style="margin-top: 1em" valign="top">If the current
+slide is not part of an overlay (or if it is the first one),
+but the previous slides are, we jump to the previous user
+slide. This means that when going back in the presentation
+you do not have to go through every step of the overlay,
+pdfpc just shows the first slide of each overlay. As one
+typically goes back in a presentation only when looking for
+a concrete slide, this is more convenient.</p></td>
 </table>
 
 <p style="margin-left:11%; margin-top: 1em">The up and down
@@ -833,6 +850,9 @@ ratio.</p>
 <a href="http://pdfpc.github.io/demo/pdfpc-video-example.zip">our website</a>
 for a full example.</p>
 
+<p style="margin-left:11%; margin-top: 1em">See the bugs
+section for further informations.</p>
+
 <p style="margin-left:11%; margin-top: 1em"><b>Pointer
 mode</b> <br>
 If needed, it is possible to turn on a pointer which draws a
@@ -885,73 +905,74 @@ explicitly.</p>
 configuration, the following command-line options are stored
 within the pdfpc file for later usage:</p>
 
-<table width="100%" border="0" rules="none" frame="void"
+<table width="100%" border=0 rules="none" frame="void"
        cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p style="margin-top: 1em">&bull;</p></td>
+<p style="margin-top: 1em" valign="top">&bull;</p></td>
 <td width="2%"></td>
 <td width="24%">
 
 
-<p style="margin-top: 1em">duration</p></td>
+<p style="margin-top: 1em" valign="top">duration</p></td>
 <td width="62%">
-</td></tr>
+</td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p>&bull;</p></td>
+<p style="margin-top: 1em" valign="top">&bull;</p></td>
 <td width="2%"></td>
 <td width="24%">
 
 
-<p>end_time</p></td>
+<p style="margin-top: 1em" valign="top">end_time</p></td>
 <td width="62%">
-</td></tr>
+</td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p>&bull;</p></td>
+<p style="margin-top: 1em" valign="top">&bull;</p></td>
 <td width="2%"></td>
 <td width="24%">
 
 
-<p>last_minutes</p></td>
+<p style="margin-top: 1em" valign="top">last_minutes</p></td>
 <td width="62%">
-</td></tr>
+</td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p>&bull;</p></td>
+<p style="margin-top: 1em" valign="top">&bull;</p></td>
 <td width="2%"></td>
 <td width="24%">
 
 
-<p>notes (position)</p></td>
+<p style="margin-top: 1em" valign="top">notes
+(position)</p> </td>
 <td width="62%">
-</td></tr>
+</td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p>&bull;</p></td>
+<p style="margin-top: 1em" valign="top">&bull;</p></td>
 <td width="2%"></td>
 <td width="24%">
 
 
-<p>start_time</p></td>
+<p style="margin-top: 1em" valign="top">start_time</p></td>
 <td width="62%">
-</td></tr>
+</td>
 </table>
 
 <p style="margin-left:11%; margin-top: 1em">There are,
@@ -971,35 +992,36 @@ Changing notes within pdfpc is then forbidden.</p>
 plain-text files that should be fairly self-explanatory. A
 couple of things to note:</p>
 
-<table width="100%" border="0" rules="none" frame="void"
+<table width="100%" border=0 rules="none" frame="void"
        cellspacing="0" cellpadding="0">
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p style="margin-top: 1em">&bull;</p></td>
+<p style="margin-top: 1em" valign="top">&bull;</p></td>
 <td width="2%"></td>
 <td width="78%">
 
 
-<p style="margin-top: 1em">The slide numbers of the notes
-refer to user slides</p></td>
+<p style="margin-top: 1em" valign="top">The slide numbers
+of the notes refer to user slides</p></td>
 <td width="8%">
-</td></tr>
+</td>
 <tr valign="top" align="left">
 <td width="11%"></td>
 <td width="1%">
 
 
-<p>&bull;</p></td>
+<p style="margin-top: 1em" valign="top">&bull;</p></td>
 <td width="2%"></td>
 <td width="78%">
 
 
-<p>Slide indexes start at 1</p></td>
+<p style="margin-top: 1em" valign="top">Slide indexes start
+at 1</p></td>
 <td width="8%">
-</td></tr>
+</td>
 </table>
 
 
@@ -1019,18 +1041,21 @@ execute any action listed by <b>--list-actions</b>. The
 interface appears on the session bus as
 <i>io.github.pdfpc</i>.</p>
 
-<h2>BUGS
 <a name="BUGS"></a>
-</h2>
+<h2>BUGS</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em">Bugs can be
 reported at
 <a href="https://github.com/pdfpc/pdfpc/issues">our issue tracker</a>.</p>
 
-<h2>ACKNOWLEDGEMENTS
+<p style="margin-left:11%; margin-top: 1em">The LaTeX
+package &quot;hyperref&quot; produces buggy results when
+using with beamer notes. It is recommended to use the
+&quot;multimedia&quot; package instead.</p>
+
 <a name="ACKNOWLEDGEMENTS"></a>
-</h2>
+<h2>ACKNOWLEDGEMENTS</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em">pdfpc was
@@ -1041,9 +1066,8 @@ previously developed by
 of Pdf Presenter Console, available
 <a href="https://github.com/jakobwesthoff/Pdf-Presenter-Console">online</a>.</p>
 
-<h2>SEE ALSO
 <a name="SEE ALSO"></a>
-</h2>
+<h2>SEE ALSO</h2>
 
 
 <p style="margin-left:11%; margin-top: 1em">pdfpcrc(5)</p>
