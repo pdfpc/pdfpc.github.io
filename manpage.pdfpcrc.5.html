@@ -7,6 +7,12 @@
     td.head-rtitle, td.foot-os { text-align: right; }
     td.head-vol { text-align: center; }
     div.Pp { margin: 1ex 0ex; }
+    div.Nd, div.Bf, div.Op { display: inline; }
+    span.Pa, span.Ad { font-style: italic; }
+    span.Ms { font-weight: bold; }
+    dl.Bl-diag > dt { font-weight: bold; }
+    code.Nm, code.Fl, code.Cm, code.Ic, code.In, code.Fd, code.Fn,
+    code.Cd { font-weight: bold; font-family: inherit; }
   </style>
   <title>PDFPCRC(5)</title>
 </head>
@@ -19,160 +25,200 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="selflink" href="#NAME">NAME</a></h1>
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
 pdfpcrc - pdfpc configuration file
-<div style="height: 1.00em;">&#x00A0;</div>
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="selflink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<div class="Pp"></div>
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
 <b>pdfpc</b>(1) first reads its system-wide configuration file, followed by the
   user-specific one if it exists.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h2 class="Ss" title="Ss" id="Keybindings"><a class="selflink" href="#Keybindings">Keybindings</a></h2>
+<div class="Pp"></div>
+<h2 class="Ss" title="Ss" id="Keybindings"><a class="permalink" href="#Keybindings">Keybindings</a></h2>
 The following commands are accepted:
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>bind &lt;key&gt; &lt;func&gt; [&lt;arg&gt;]</b></dt>
-  <dd class="It-tag">Bind a key to a function, passing a specified argument for
-      functions which require one</dd>
+  <dt><b>bind &lt;key&gt; &lt;func&gt; [&lt;arg&gt;]</b></dt>
+  <dd>Bind a key to a function, passing a specified argument for functions which
+      require one</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>unbind &lt;key&gt;</b></dt>
-  <dd class="It-tag">Unbind the given key</dd>
+  <dt><b>unbind &lt;key&gt;</b></dt>
+  <dd>Unbind the given key</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>unbind_all</b></dt>
-  <dd class="It-tag">Clear all the key bindings</dd>
+  <dt><b>unbind_all</b></dt>
+  <dd>Clear all the key bindings</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>mouse &lt;button&gt; &lt;func&gt;</b></dt>
-  <dd class="It-tag">Bind a mouse button to a function</dd>
+  <dt><b>mouse &lt;button&gt; &lt;func&gt;</b></dt>
+  <dd>Bind a mouse button to a function</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>unmouse &lt;button&gt;</b></dt>
-  <dd class="It-tag">Unbind a mouse button</dd>
+  <dt><b>unmouse &lt;button&gt;</b></dt>
+  <dd>Unbind a mouse button</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>unmouse_all</b></dt>
-  <dd class="It-tag">Clear all the mouse bindings
-    <div style="height: 1.00em;">&#x00A0;</div>
+  <dt><b>unmouse_all</b></dt>
+  <dd>Clear all the mouse bindings
+    <div class="Pp"></div>
   </dd>
 </dl>
 <div class="Pp"></div>
 A list of all possible functions can be obtained via the -L command line option
   of <b>pdfpc</b>(1).
-<div style="height: 1.00em;">&#x00A0;</div>
-<h2 class="Ss" title="Ss" id="Options"><a class="selflink" href="#Options">Options</a></h2>
+<div class="Pp"></div>
+<h2 class="Ss" title="Ss" id="Options"><a class="permalink" href="#Options">Options</a></h2>
 Some permanent changes can be configured via the config file. The syntax is:
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>option &lt;option_name&gt; &lt;option_value&gt;</b></dt>
-  <dd class="It-tag">
-    <div style="height: 1.00em;">&#x00A0;</div>
+  <dt><b>option &lt;option_name&gt; &lt;option_value&gt;</b></dt>
+  <dd>
+    <div class="Pp"></div>
   </dd>
 </dl>
 <div class="Pp"></div>
 The following option_name's are recognized:
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>black-on-end</b></dt>
-  <dd class="It-tag">Add an additional black slide at the end of the
-      presentation (bool, Default false)</dd>
+  <dt><b>black-on-end</b></dt>
+  <dd>Add an additional black slide at the end of the presentation (bool,
+      Default is false).</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>current-height</b></dt>
-  <dd class="It-tag">Percentage of the height of the presenter screen to be used
-      for the current slide. (int, Default 80)</dd>
+  <dt><b>current-height</b></dt>
+  <dd>Percentage of the height of the presenter screen to be used for the
+      current slide (int, Default is 80).</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>current-size</b></dt>
-  <dd class="It-tag">Percentage of the presenter screen to be used for the
-      current slide. (int, Default 60)</dd>
+  <dt><b>current-size</b></dt>
+  <dd>Percentage of the presenter screen to be used for the current slide (int,
+      Default is 60).</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>disable-caching</b></dt>
-  <dd class="It-tag">see <b><b>pdfpc</b>(1)</b></dd>
+  <dt><b>disable-caching</b></dt>
+  <dd>see <b><b>pdfpc</b>(1)</b></dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>disable-compression</b></dt>
-  <dd class="It-tag">see <b><b>pdfpc</b>(1)</b></dd>
+  <dt><b>disable-compression</b></dt>
+  <dd>see <b><b>pdfpc</b>(1)</b></dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>disable-scrolling</b></dt>
-  <dd class="It-tag">Disable scrolling events on the presenter window (bool,
-      Default false)</dd>
+  <dt><b>disable-input-autodetection</b></dt>
+  <dd>Do not automatically detect type (pen or eraser) of tablet input devices
+      (bool, Default is false).</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>next-height</b></dt>
-  <dd class="It-tag">Percentage of the height of the presenter screen to be used
-      for the next slide. (int, Default 70)</dd>
+  <dt><b>disable-scrolling</b></dt>
+  <dd>Disable scrolling events on the presenter window (bool, Default is
+    false).</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>overview-min-size</b></dt>
-  <dd class="It-tag">Minimum width for the overview miniatures, in pixels. (int,
-      Default 150)</dd>
+  <dt><b>enable-auto-srt-load</b></dt>
+  <dd>Try loading video subtitle files automatically. For each video media,
+      pdfpc will append &quot;.srt&quot; to the media URI and attempt to load a
+      subtitle file (in the SRT format) from that location (bool, Default is
+      false).</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>switch-screens</b></dt>
-  <dd class="It-tag">Switch the presentation and the presenter screen. (bool,
-      Default false)</dd>
+  <dt><b>move-on-mapped</b></dt>
+  <dd>Dual-monitor full-screen window placement is a tricky business. Some
+      window managers (e.g., FVWM) ignore the placement if made before the
+      window is shown. This option enables a workaround (bool, Default is
+      false).</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>time-of-day</b></dt>
-  <dd class="It-tag">Display the current time instead of the timer</dd>
+  <dt><b>next-height</b></dt>
+  <dd>Percentage of the height of the presenter screen to be used for the next
+      slide (int, Default is 70).</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>timer-pace-color</b></dt>
-  <dd class="It-tag">Enable color hints of the timer, continuously indicating
-      whether the presentation is progressing according to the expected pace
-      (bool, Default true). See the timer operation description in
-      <b><b>pdfpc</b>(1).</b></dd>
+  <dt><b>overview-min-size</b></dt>
+  <dd>Minimum width for the overview miniatures, in pixels (int, Default is
+      150).</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>toolbox</b></dt>
-  <dd class="It-tag">Show the toolbox on startup (bool, Default false)</dd>
+  <dt><b>pointer-color</b></dt>
+  <dd>Set the pointer color. Can be a literal color name or a #rrggbb
+      representation (default is red).</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>toolbox-direction</b></dt>
-  <dd class="It-tag">Set the toolbox direction (LtoR, RtoL, TtoB, or BtoT for
-      the left-to-right, right-to-left, top-to-bottom, or botton-to-top,
-      respectively). Default is LtoR.</dd>
+  <dt><b>pointer-opacity</b></dt>
+  <dd>Set the pointer opacity in percent (int, default is 50).</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>toolbox-minimized</b></dt>
-  <dd class="It-tag">Set the initial toolbox state minimized (bool, Default
-      false)
-    <div style="height: 1.00em;">&#x00A0;</div>
+  <dt><b>pointer-size</b></dt>
+  <dd>Set the initial pointer size, in pixels (int, default is 10).</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>presentation-screen</b></dt>
+  <dd>Screen to be used for the presentation (output name, see e.g. &quot;xrandr
+      --listmonitors&quot;).</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>presenter-screen</b></dt>
+  <dd>Screen to be used for the presenter (output name).</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>switch-screens</b></dt>
+  <dd>Switch the presentation and the presenter screen (bool, Default is
+    false).</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>time-of-day</b></dt>
+  <dd>Display the current time instead of the timer</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>timer-pace-color</b></dt>
+  <dd>Enable color hints of the timer, continuously indicating whether the
+      presentation is progressing according to the expected pace (bool, Default
+      is true). See the timer operation description in
+    <b><b>pdfpc</b>(1).</b></dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>toolbox</b></dt>
+  <dd>Show the toolbox on startup (bool, Default is false).</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>toolbox-direction</b></dt>
+  <dd>Set the toolbox direction. LtoR, RtoL, TtoB, or BtoT for the
+      left-to-right, right-to-left, top-to-bottom, or botton-to-top,
+      respectively (Default is LtoR).</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>toolbox-minimized</b></dt>
+  <dd>Set the initial toolbox state minimized (bool, Default is false).
+    <div class="Pp"></div>
   </dd>
 </dl>
-<h1 class="Sh" title="Sh" id="EXAMPLES"><a class="selflink" href="#EXAMPLES">EXAMPLES</a></h1>
+<h1 class="Sh" title="Sh" id="EXAMPLES"><a class="permalink" href="#EXAMPLES">EXAMPLES</a></h1>
 Key names can be obtained with the help of the xev utility. Note that names are
   case sensitive. Modifiers can be specified in the form &lt;mod&gt;+&lt;key&gt;
   where &lt;mod&gt; is one of S (for shift), C (for control) and A/M (for
   Alt/Meta). E.g.
-<div style="height: 1.00em;">&#x00A0;</div>
-<div style="margin-left: 5.00ex;">bind S+Next next10</div>
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
+<div class="Bd-indent">bind S+Next next10</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 A shorthand for specifying key combinations constituting shift and an alphabetic
   character is to simply give the uppercase version of the alphabetic character.
   For example, to bind &lt;shift&gt;+r to the 'reset' function, use
-<div style="height: 1.00em;">&#x00A0;</div>
-<div style="margin-left: 5.00ex;">bind R reset</div>
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
+<div class="Bd-indent">bind R reset</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 To always activate the black-on-end option, one could add the following to the
   config file
-<div style="height: 1.00em;">&#x00A0;</div>
-<div style="margin-left: 5.00ex;">option black-on-end true</div>
-<div style="height: 1.00em;">&#x00A0;</div>
-<h1 class="Sh" title="Sh" id="FILES"><a class="selflink" href="#FILES">FILES</a></h1>
+<div class="Pp"></div>
+<div class="Bd-indent">option black-on-end true</div>
+<div class="Pp"></div>
+<h1 class="Sh" title="Sh" id="FILES"><a class="permalink" href="#FILES">FILES</a></h1>
 <b>@SYSCONFDIR@/pdfpcrc</b>
-<div style="margin-left: 4.00ex;">System-wide configuration file</div>
+<div class="Bd-indent">System-wide configuration file</div>
 <div class="Pp"></div>
 <b>$XDG_CONFIG_DIR/pdfpc/pdfpcrc</b>
-<div style="margin-left: 4.00ex;">User configuration file (if $XDG_CONFIG_DIR is
-  not set, $HOME/.config will be used).
-<div style="height: 1.00em;">&#x00A0;</div>
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Bd-indent">User configuration file (if $XDG_CONFIG_DIR is not set,
+  $HOME/.config will be used).
+<div class="Pp"></div>
+<div class="Pp"></div>
 </div>
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="selflink" href="#SEE_ALSO">SEE
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
 <b>pdfpc</b>(1)</div>
 <table class="foot">

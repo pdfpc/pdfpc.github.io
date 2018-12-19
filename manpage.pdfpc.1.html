@@ -7,6 +7,12 @@
     td.head-rtitle, td.foot-os { text-align: right; }
     td.head-vol { text-align: center; }
     div.Pp { margin: 1ex 0ex; }
+    div.Nd, div.Bf, div.Op { display: inline; }
+    span.Pa, span.Ad { font-style: italic; }
+    span.Ms { font-weight: bold; }
+    dl.Bl-diag > dt { font-weight: bold; }
+    code.Nm, code.Fl, code.Cm, code.Ic, code.In, code.Fd, code.Fn,
+    code.Cd { font-weight: bold; font-family: inherit; }
   </style>
   <title>PDFPC(1)</title>
 </head>
@@ -19,13 +25,13 @@
   </tr>
 </table>
 <div class="manual-text">
-<h1 class="Sh" title="Sh" id="NAME"><a class="selflink" href="#NAME">NAME</a></h1>
+<h1 class="Sh" title="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h1>
 pdfpc - PDF presenter console with multi-monitor support
-<div style="height: 1.00em;">&#x00A0;</div>
-<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="selflink" href="#SYNOPSIS">SYNOPSIS</a></h1>
+<div class="Pp"></div>
+<h1 class="Sh" title="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h1>
 <b>pdfpc</b> [options] PDF-file
-<div style="height: 1.00em;">&#x00A0;</div>
-<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="selflink" href="#DESCRIPTION">DESCRIPTION</a></h1>
+<div class="Pp"></div>
+<h1 class="Sh" title="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h1>
 pdfpc is a GTK-based presentation viewer which uses Keynote-like multi-monitor
   output to provide meta information to the speaker during the presentation. It
   is able to show a normal presentation window on one screen while showing a
@@ -36,288 +42,298 @@ pdfpc is a GTK-based presentation viewer which uses Keynote-like multi-monitor
 <div class="Pp"></div>
 By default the presenter view appears in the primary monitor and the
   presentation view in the second monitor (provided you have two monitors).
-<div style="height: 1.00em;">&#x00A0;</div>
-<h1 class="Sh" title="Sh" id="OPTIONS"><a class="selflink" href="#OPTIONS">OPTIONS</a></h1>
+<div class="Pp"></div>
+<h1 class="Sh" title="Sh" id="OPTIONS"><a class="permalink" href="#OPTIONS">OPTIONS</a></h1>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-c, --disable-cache</b></dt>
-  <dd class="It-tag">Disable caching and pre-rendering of slides to save memory
-      at the cost of speed.</dd>
+  <dt><b>-c, --disable-cache</b></dt>
+  <dd>Disable caching and pre-rendering of slides to save memory at the cost of
+      speed.</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-C, --time-of-day</b></dt>
-  <dd class="It-tag">Display the time of the day</dd>
+  <dt><b>-C, --time-of-day</b></dt>
+  <dd>Display the time of the day</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-d, --duration</b><i>=N</i></dt>
-  <dd class="It-tag">Duration in minutes of the presentation used for timer
-      display. If not given or if a value of 0 is specified, the clock just
-      measures the time in the presentation.</dd>
+  <dt><b>-d, --duration</b><i>=N</i></dt>
+  <dd>Duration in minutes of the presentation used for timer display. If not
+      given or if a value of 0 is specified, the clock just measures the time in
+      the presentation.</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-e, --end-time</b><i>=T</i></dt>
-  <dd class="It-tag">End time of the presentation. (Format: HH:MM (24h))</dd>
+  <dt><b>-e, --end-time</b><i>=T</i></dt>
+  <dd>End time of the presentation. (Format: HH:MM (24h))</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-g, --disable-auto-grouping</b></dt>
-  <dd class="It-tag">Disable auto detection of overlay groups. (Default:
-      enabled)</dd>
+  <dt><b>-g, --disable-auto-grouping</b></dt>
+  <dd>Disable auto detection of overlay groups. (Default: enabled)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-h, --help</b></dt>
-  <dd class="It-tag">Show this help</dd>
+  <dt><b>-h, --help</b></dt>
+  <dd>Show this help</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-l, --last-minutes</b><i>=N</i></dt>
-  <dd class="It-tag">Time in minutes, from which on the timer changes its color.
-      (Default: 5 minutes)</dd>
+  <dt><b>-l, --last-minutes</b><i>=N</i></dt>
+  <dd>Time in minutes, from which on the timer changes its color. (Default: 5
+      minutes)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-L, --list-actions</b></dt>
-  <dd class="It-tag">List actions supported in the config file(s)</dd>
+  <dt><b>-L, --list-actions</b></dt>
+  <dd>List actions supported in the config file(s)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-n, --notes</b><i>=P</i></dt>
-  <dd class="It-tag">Position of notes on the PDF page. Position can be either
-      left, right, top or bottom. Disable slide auto-grouping (Default:
-    none)</dd>
+  <dt><b>-M, --list-monitors</b></dt>
+  <dd>List monitors known to the operating system</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-p, --persist-cache</b></dt>
-  <dd class="It-tag">Persist the PNG cache on disk for faster startup.</dd>
+  <dt><b>-n, --notes</b><i>=P</i></dt>
+  <dd>Position of notes on the PDF page. Position can be either left, right, top
+      or bottom. Disable slide auto-grouping (Default: none)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-P, --page</b></dt>
-  <dd class="It-tag">Go to a specific page directly after startup. In case of
-      overlays, the first slide will be displayed.</dd>
+  <dt><b>-N, --no-install</b></dt>
+  <dd>Allow for testing pdfpc without proper installation. Icons, configuration
+      files, etc. will be loaded from the source path locations. Mostly intended
+      for developers.</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-R, --pdfpc-location</b><i>=LOCATION</i></dt>
-  <dd class="It-tag">Use custom pdfpc file.</dd>
+  <dt><b>-p, --persist-cache</b></dt>
+  <dd>Persist the PNG cache on disk for faster startup.</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-s, --switch-screens</b></dt>
-  <dd class="It-tag">Switch the presentation and the presenter screen.</dd>
+  <dt><b>-P, --page</b></dt>
+  <dd>Go to a specific page directly after startup. In case of overlays, the
+      first slide will be displayed.</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-S, --single-screen</b></dt>
-  <dd class="It-tag">Force to use only one screen</dd>
+  <dt><b>-R, --pdfpc-location</b><i>=LOCATION</i></dt>
+  <dd>Use custom pdfpc file.</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-t, --start-time</b><i>=T</i></dt>
-  <dd class="It-tag">Start time of the presentation to be used as a countdown.
-      (Format: HH:MM (24h))</dd>
+  <dt><b>-s, --switch-screens</b></dt>
+  <dd>Switch the presentation and the presenter screen.</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-W, --wayland-workaround</b></dt>
-  <dd class="It-tag">Enable Wayland-specific workaround. This might fix HiDPI
-      scaling problems.</dd>
+  <dt><b>-S, --single-screen</b></dt>
+  <dd>Force to use only one screen</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-w, --windowed</b></dt>
-  <dd class="It-tag">Run in windowed mode</dd>
+  <dt><b>-t, --start-time</b><i>=T</i></dt>
+  <dd>Start time of the presentation to be used as a countdown. (Format: HH:MM
+      (24h))</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-z, --disable-compression</b></dt>
-  <dd class="It-tag">Disable the compression of slide images to trade memory
-      consumption for speed. (Avg. factor 30)</dd>
+  <dt><b>-T, --enable-auto-srt-load</b></dt>
+  <dd>Try loading video subtitle files automatically. For each video media,
+      pdfpc will append &quot;.srt&quot; to the media URI and attempt to load a
+      subtitle file (in the SRT format) from that location.</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>-Z, --size</b></dt>
-  <dd class="It-tag">Size of the presentation window in width:height format
-      (forces windowed mode)
-    <div style="height: 1.00em;">&#x00A0;</div>
+  <dt><b>-W, --wayland-workaround</b></dt>
+  <dd>Enable Wayland-specific workaround. This might fix HiDPI scaling
+    problems.</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>-w, --windowed</b></dt>
+  <dd>Run in windowed mode</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>-z, --disable-compression</b></dt>
+  <dd>Disable the compression of slide images to trade memory consumption for
+      speed. (Avg. factor 30)</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>-Z, --size</b></dt>
+  <dd>Size of the presentation window in width:height format (forces windowed
+      mode)</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>-1, --presenter-screen</b><i>=MONITOR</i></dt>
+  <dd>Monitor to be used for the presenter screen (see the -M option).</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>-2, --presentation-screen</b><i>=MONITOR</i></dt>
+  <dd>Monitor to be used for the presentation screen (see the -M option).
+    <div class="Pp"></div>
   </dd>
 </dl>
-<div class="Pp"></div>
-Some previous command-line options (like black-on-end) were moved to permanent
-  config file options. See <b>pdfpcrc(5)</b> for further details.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h1 class="Sh" title="Sh" id="KEYBINDINGS"><a class="selflink" href="#KEYBINDINGS">KEYBINDINGS</a></h1>
+<h1 class="Sh" title="Sh" id="KEYBINDINGS"><a class="permalink" href="#KEYBINDINGS">KEYBINDINGS</a></h1>
 These are the default keybindings for pdfpc:
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>Right cursor key / Page down / Return / Space / Left
-    mouse button</b></dt>
-  <dd class="It-tag">Go forward one slide</dd>
+  <dt><b>Right cursor key / Down cursor key / Page down / Return / Space / 1st
+    mouse button / Mouse wheel down</b></dt>
+  <dd>Go forward one slide</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>Shift + Right cursor key / Page down / Return / Space /
-    Left mouse button / Mouse wheel down or right</b></dt>
-  <dd class="It-tag">Go forward 10 slides</dd>
+  <dt><b>Left cursor key / Up cursor key / Page up / Backspace / 3rd mouse
+    button / Mouse wheel up</b></dt>
+  <dd>Go back one slide</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>Down cursor key</b></dt>
-  <dd class="It-tag">Go forward one user slide (see <b>Overlays</b> below)</dd>
+  <dt><b>Shift + Page down</b></dt>
+  <dd>Go forward one user slide (see <b>Overlays</b> below)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>Left cursor key / Page up / Right mouse button / Mouse
-    wheel up or left</b></dt>
-  <dd class="It-tag">Go back one slide</dd>
+  <dt><b>Shift + Page up</b></dt>
+  <dd>Go back one user slide (see <b>Overlays</b> below)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>Shift + Left cursor key / Page up / Right mouse
-    button</b></dt>
-  <dd class="It-tag">Go back 10 slides</dd>
+  <dt><b>Shift + Right cursor key / 1st mouse button / Mouse wheel down</b></dt>
+  <dd>Go forward 10 slides</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>Up cursor key</b></dt>
-  <dd class="It-tag">Go back one user slide (see <b>Overlays</b> below)</dd>
+  <dt><b>Shift + Left cursor key / 3rd mouse button / Mouse wheel up</b></dt>
+  <dd>Go back 10 slides</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>Home</b></dt>
-  <dd class="It-tag">Go to the first slide</dd>
+  <dt><b>Home</b></dt>
+  <dd>Go to the first slide</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>End</b></dt>
-  <dd class="It-tag">Go to the last slide</dd>
+  <dt><b>End</b></dt>
+  <dd>Go to the last slide</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>Backspace</b></dt>
-  <dd class="It-tag">Go back in history. Note that history is defined by
-      &quot;jump&quot; commands, not by normal slide movement.</dd>
+  <dt><b>Shift + Backspace</b></dt>
+  <dd>Go back in history. Note that history is defined by &quot;jump&quot;
+      commands, not by normal slide movement.</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>j / k</b></dt>
-  <dd class="It-tag">Go to the previous / next slide, skipping over overlays
-      that have already been viewed, but at most one user slide.</dd>
+  <dt><b>Shift + Home / Shift + End</b></dt>
+  <dd>Go to the previous / next slide, skipping over overlays that have already
+      been viewed, but at most one user slide.</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>Tab / Middle mouse button</b></dt>
-  <dd class="It-tag">Overview mode</dd>
+  <dt><b>Tab / 2nd mouse button</b></dt>
+  <dd>Overview mode</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>g</b></dt>
-  <dd class="It-tag">Input a slide number to jump to</dd>
+  <dt><b>g</b></dt>
+  <dd>Input a slide number to jump to</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>Plus / Equal / KP_Add / Bracket Left</b></dt>
-  <dd class="It-tag">Increase font size of notes</dd>
+  <dt><b>m</b></dt>
+  <dd>Bookmark the current slide and store it in the <b>.pdfpc</b> file for
+      later usage</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>Minus / KP_Subtract / Bracket Right</b></dt>
-  <dd class="It-tag">Decrease font size of notes</dd>
+  <dt><b>Shift + m</b></dt>
+  <dd>Load the bookmarked slide which was saved with <b>m</b> before</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>8 / KP_8</b></dt>
-  <dd class="It-tag">Toggle pointer mode</dd>
+  <dt><b>t</b></dt>
+  <dd>Toggle the toolbox</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>7 / KP_7</b></dt>
-  <dd class="It-tag">Decrease pointer size</dd>
+  <dt><b>1 / KP_1</b></dt>
+  <dd>Switch to the normal mode (pen/eraser and pointer are off)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>9 / KP_9</b></dt>
-  <dd class="It-tag">Increase pointer size</dd>
+  <dt><b>2 / KP_2</b></dt>
+  <dd>Switch the pointer mode on</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>5 / KP_5</b></dt>
-  <dd class="It-tag">Toggle drawing mode</dd>
+  <dt><b>3 / KP_3</b></dt>
+  <dd>Switch the pen drawing mode on</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>6 / KP_6</b></dt>
-  <dd class="It-tag">Clear the current drawing</dd>
+  <dt><b>4 / KP_4</b></dt>
+  <dd>Switch the eraser drawing mode on</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>4 / KP_4</b></dt>
-  <dd class="It-tag">Temporarily hide the current drawing and exit drawing
-    mode</dd>
+  <dt><b>Plus / KP_Add / Equal</b></dt>
+  <dd>Depending on the current mode, increase font size of notes or pointer size
+      or the size of pen or eraser</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>1 / KP_1</b></dt>
-  <dd class="It-tag">Decrease the pen or eraser size for drawing</dd>
+  <dt><b>Minus / KP_Subtract</b></dt>
+  <dd>Depending on the current mode, decrease font size of notes or pointer size
+      or the size of pen or eraser</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>3 / KP_3</b></dt>
-  <dd class="It-tag">Increase the pen or eraser size for drawing</dd>
+  <dt><b>c</b></dt>
+  <dd>Clear the drawing on the current page</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>2 / KP_2</b></dt>
-  <dd class="It-tag">Toggle between the pen and eraser tool for drawing</dd>
+  <dt><b>d</b></dt>
+  <dd>Toggle visibility the drawings; if in the drawing mode (pen/eraser), exit
+      it</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>Shift-1 / Shift-KP_2 ... Shift-8 / Shift-KP_8</b></dt>
-  <dd class="It-tag">Switch the drawing color to
-      red/orange/yellow/green/blue/violet/black/white, respectively. (Depending
-      on your keyboard layout, not all options will work in the main section of
-      the keyboard.)</dd>
+  <dt><b>Shift + 1 / KP_1 ... Shift + 8 / KP_8</b></dt>
+  <dd>Switch the drawing color to
+      red/orange/yellow/green/blue/violet/black/white, respectively.</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>Escape / q</b></dt>
-  <dd class="It-tag">Exit pdfpc</dd>
+  <dt><b>f</b></dt>
+  <dd>Freeze the current presentation display (the presenter display is still
+      fully active)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>b</b></dt>
-  <dd class="It-tag">Turn off the presentation view (i.e. fill it with a black
-      color)</dd>
+  <dt><b>b</b></dt>
+  <dd>Turn off the presentation view (i.e. fill it with a black color)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>h</b></dt>
-  <dd class="It-tag">Hide the presentation window (i.e. make other windows on
-      the other screen visible)</dd>
+  <dt><b>h</b></dt>
+  <dd>Hide the presentation window (i.e. make other windows on the other screen
+      visible)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>n</b></dt>
-  <dd class="It-tag">Edit note for current slide</dd>
+  <dt><b>Escape</b></dt>
+  <dd>Exit any &quot;special&quot; state (pause, freeze, blank)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>f</b></dt>
-  <dd class="It-tag">Freeze the current presentation display (the presenter
-      display is still fully active)</dd>
+  <dt><b>Ctrl + n</b></dt>
+  <dd>Edit notes for the current slide (press Escape to exit this mode)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>o</b></dt>
-  <dd class="It-tag">Toggle the overlay flag for one particular slide (see
-      Overlays below)</dd>
+  <dt><b>s</b></dt>
+  <dd>Start timer</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>p</b></dt>
-  <dd class="It-tag">Pause timer</dd>
+  <dt><b>p</b></dt>
+  <dd>Pause timer</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>r</b></dt>
-  <dd class="It-tag">Reset presentation (reset timer and go back to first
-    slide)</dd>
+  <dt><b>Ctrl + t</b></dt>
+  <dd>Reset timer</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>e</b></dt>
-  <dd class="It-tag">Define end slide</dd>
+  <dt><b>Ctrl + o</b></dt>
+  <dd>Toggle the overlay flag for one particular slide (see Overlays below)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>R</b></dt>
-  <dd class="It-tag">Restore last saved session. Go to the slide which was saved
-      with <b>S</b> before</dd>
+  <dt><b>Ctrl + e</b></dt>
+  <dd>Define end slide</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag"><b>S</b></dt>
-  <dd class="It-tag">Save the current session. Store the current slide in the
-      <b>.pdfpc</b> file for later usage
-    <div style="height: 1.00em;">&#x00A0;</div>
+  <dt><b>Ctrl + q</b></dt>
+  <dd>Exit pdfpc</dd>
+</dl>
+<div class="Pp"></div>
+Within the overview mode, the following key bindings are used:
+<dl class="Bl-tag">
+  <dt><b>Return / 1st mouse button</b></dt>
+  <dd>Go to currently selected page (last page of overlay)</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>Shift + Return / Shift + 1st mouse button</b></dt>
+  <dd>Go to currently selected page (first page of overlay)</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>Cursor left / Page up</b></dt>
+  <dd>Select previous slide</dd>
+</dl>
+<dl class="Bl-tag">
+  <dt><b>Cursor right / Page down</b></dt>
+  <dd>Select next slide
+    <div class="Pp"></div>
   </dd>
 </dl>
 <div class="Pp"></div>
-Within overview mode the following key bindings are used:
-<dl class="Bl-tag">
-  <dt class="It-tag"><b>Return / Left mouse button</b></dt>
-  <dd class="It-tag">Go to currently selected page (last page of overlay)</dd>
-</dl>
-<dl class="Bl-tag">
-  <dt class="It-tag"><b>Shift + Return / Shift + Left mouse button</b></dt>
-  <dd class="It-tag">Go to currently selected page (first page of overlay)</dd>
-</dl>
-<dl class="Bl-tag">
-  <dt class="It-tag"><b>Cursor left / Page up</b></dt>
-  <dd class="It-tag">Select previous slide</dd>
-</dl>
-<dl class="Bl-tag">
-  <dt class="It-tag"><b>Cursor right / Page down</b></dt>
-  <dd class="It-tag">Select next slide
-    <div style="height: 1.00em;">&#x00A0;</div>
-  </dd>
-</dl>
+See <b>pdfpcrc</b>(5) if you want to customize the keybindings.
 <div class="Pp"></div>
-See <b>pdfpcrc(5)</b> if you want to customize the keybindings.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h1 class="Sh" title="Sh" id="FEATURES"><a class="selflink" href="#FEATURES">FEATURES</a></h1>
-<h2 class="Ss" title="Ss" id="Caching_/_Pre-rendering"><a class="selflink" href="#Caching_/_Pre-rendering">Caching
+<h1 class="Sh" title="Sh" id="FEATURES"><a class="permalink" href="#FEATURES">FEATURES</a></h1>
+<h2 class="Ss" title="Ss" id="Caching_/_Pre-rendering"><a class="permalink" href="#Caching_/_Pre-rendering">Caching
   / Pre-rendering</a></h2>
 To allow fast changes between the different slides of the presentation the PDF
   pages are pre-rendered to memory. The progress bar on the bottom of the
@@ -326,17 +342,17 @@ To allow fast changes between the different slides of the presentation the PDF
   slide changes, as most CPU power is used for the rendering process in the
   background. After the cache is fully primed, however, the changing of slides
   should be much faster, as with normal PDF viewers.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 As the pre-rendering takes a lot of memory it can be disabled using the
   --disable-cache switch at the cost of speed.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 It it also possible to store the pre-rendered slides on the disk (see
   --persist-cache). This speeds up the start of the program if the slide set is
   used next time unchanged.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h2 class="Ss" title="Ss" id="Cache_compression"><a class="selflink" href="#Cache_compression">Cache
+<div class="Pp"></div>
+<h2 class="Ss" title="Ss" id="Cache_compression"><a class="permalink" href="#Cache_compression">Cache
   compression</a></h2>
 The pre-rendered and cached slides can be compressed in memory to save up some
   memory. Without compression a set of about 100 PDF pages can easily grow up to
@@ -349,8 +365,8 @@ The pre-rendered and cached slides can be compressed in memory to save up some
   warned that using the uncompressed pre-rendering storage will use about 30
   times the memory the new compressed storage utilizes (e.g. 50 MB will become
   about 1.5 GB).
-<div style="height: 1.00em;">&#x00A0;</div>
-<h2 class="Ss" title="Ss" id="Timer"><a class="selflink" href="#Timer">Timer</a></h2>
+<div class="Pp"></div>
+<h2 class="Ss" title="Ss" id="Timer"><a class="permalink" href="#Timer">Timer</a></h2>
 If a duration is given (-d option), the timer will show a countdown with the
   given parameters. If no duration is specified (or if a value of 0 is given to
   the -d option), the timer will show how much time has been spent. The duration
@@ -389,8 +405,8 @@ Contrary to that, in the new (default) mode, pdfpc tracks your progress
 In any case as soon as the timer reaches the zero mark (00:00:00), it will turn
   red and count further down showing a negative time, to provide information on
   how many minutes you are overtime.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h2 class="Ss" title="Ss" id="Notes"><a class="selflink" href="#Notes">Notes</a></h2>
+<div class="Pp"></div>
+<h2 class="Ss" title="Ss" id="Notes"><a class="permalink" href="#Notes">Notes</a></h2>
 Textual notes can be displayed for each slide. A few types of PDF annotations
   are understood by pdfpc and will be automatically imported and displayed (only
   their textual content, no formatting attributes are preserved). The PDF
@@ -410,21 +426,21 @@ Although mixing the two types of notes is possible, for a given presentation one
   will likely want to have either only the &quot;native&quot; notes (produced by
   the same PDF authoring software used for making the slides), or only the
   &quot;pdfpc&quot; ones.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h2 class="Ss" title="Ss" id="Overview_mode"><a class="selflink" href="#Overview_mode">Overview
+<div class="Pp"></div>
+<h2 class="Ss" title="Ss" id="Overview_mode"><a class="permalink" href="#Overview_mode">Overview
   mode</a></h2>
 Pressing the Tab key enters the overview mode, where thumbnails of the slides
   are shown in a grid. You can select a slide to jump to with the mouse or with
   the arrow keys. You can also define overlays and the end slide (see next
   sections) in this mode.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h2 class="Ss" title="Ss" id="Overlays"><a class="selflink" href="#Overlays">Overlays</a></h2>
+<div class="Pp"></div>
+<h2 class="Ss" title="Ss" id="Overlays"><a class="permalink" href="#Overlays">Overlays</a></h2>
 Many slide preparation systems allow for overlays, i.e. sets of slides that are
   logically grouped together as a single, changing slide. Examples include
   enumerations where bullet items are displayed one after another, or rough
   &quot;animations&quot;, where parts of a picture change from slide to slide.
   Pdfpc includes facilities for dealing with such overlays.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 In this description, we will differentiate between slides (i.e. pages in the PDF
   document) and &quot;user slides&quot;, that are the logical slides. The
@@ -432,34 +448,34 @@ In this description, we will differentiate between slides (i.e. pages in the PDF
   slide at a time, as expected. This means that every step in the overlay is
   traversed. The backward movement command works differently depending on
   whether the current and previous slides are part of an overlay:
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <dl class="Bl-tag">
-  <dt class="It-tag">&#x2022;</dt>
-  <dd class="It-tag">If the current slide is part of an overlay we just jump to
-      the previous slide. That means that we are in the middle of an overlay and
-      can jump forward and backward through the single steps of it</dd>
+  <dt>&#x2022;</dt>
+  <dd>If the current slide is part of an overlay we just jump to the previous
+      slide. That means that we are in the middle of an overlay and can jump
+      forward and backward through the single steps of it</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag">&#x2022;</dt>
-  <dd class="It-tag">If the current slide is not part of an overlay (or if it is
-      the first one), but the previous slides are, we jump to the previous user
-      slide. This means that when going back in the presentation you do not have
-      to go through every step of the overlay, pdfpc just shows the first slide
-      of each overlay. As one typically goes back in a presentation only when
+  <dt>&#x2022;</dt>
+  <dd>If the current slide is not part of an overlay (or if it is the first
+      one), but the previous slides are, we jump to the previous user slide.
+      This means that when going back in the presentation you do not have to go
+      through every step of the overlay, pdfpc just shows the first slide of
+      each overlay. As one typically goes back in a presentation only when
       looking for a concrete slide, this is more convenient.
-    <div style="height: 1.00em;">&#x00A0;</div>
+    <div class="Pp"></div>
   </dd>
 </dl>
 <div class="Pp"></div>
 The up and down cursor keys work on the &quot;user slide&quot; basis. You can
   use them to skip the rest of an overlay or to jump to the previous user slide,
   ignoring the state of the current slide.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 When going through an overlay, two additional previews may be activated in the
   presenter view, just below the main view, showing the next and the previous
   slide in an overlay.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 Pdfpc tries to find these overlays automatically by looking into the page labels
   in the PDF file. For LaTeX this works correctly at least with the beamer class
@@ -468,8 +484,8 @@ Pdfpc tries to find these overlays automatically by looking into the page labels
   detection, you can supply this information using the 'o' key for each slide
   that is part of an overlay (except the first one!). The page numbering is also
   adapted. This information is automatically stored.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h2 class="Ss" title="Ss" id="End_slide"><a class="selflink" href="#End_slide">End
+<div class="Pp"></div>
+<h2 class="Ss" title="Ss" id="End_slide"><a class="permalink" href="#End_slide">End
   slide</a></h2>
 Some people like to have some additional, backup slides after the last slide in
   the actual presentation. Things like bibliographic references or slides
@@ -477,22 +493,22 @@ Some people like to have some additional, backup slides after the last slide in
   which is the last slide in the actual presentation via the 'e' key. This just
   changes the progress display in the presenter screen, as to have a better
   overview of how many slides are left.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h2 class="Ss" title="Ss" id="Movies"><a class="selflink" href="#Movies">Movies</a></h2>
+<div class="Pp"></div>
+<h2 class="Ss" title="Ss" id="Movies"><a class="permalink" href="#Movies">Movies</a></h2>
 Pdfpc can play back movies included in the PDF file. Movies may be started and
   stopped by clicking within their area. For the presenter, a progress bar is
   drawn along the bottom of the movie. This expands when the mouse hovers over
   it, allowing one to seek by clicking or dragging within the progress bar.
   Switching slides automatically stops playback, and movies will be reset after
   leaving and returning to a slide.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 Movies may be included in PDF files as &quot;screen annotations&quot;. pdfpc
   does not yet support options that modify the playback of these movies. In
   LaTeX, such movies may be added to a presentation with the &quot;movie15&quot;
   or &quot;multimedia&quot; package. Note that the poster, autoplay, and repeat
   options are not yet supported. (Also, run ps2pdf with the -dNOSAFER flag.)
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 As a perhaps simpler option, pdfpc will play back movies linked from a hyperlink
   of type &quot;launch&quot;. A query string may be added to the URL of the
@@ -501,25 +517,25 @@ As a perhaps simpler option, pdfpc will play back movies linked from a hyperlink
   &quot;movie.avi?autostart&amp;loop&amp;noprogress&quot; will add a video that
   starts playing automatically, loops when it reaches the end, and does not show
   the progress bar.)
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 In LaTeX, such links are created with
-<div style="height: 1.00em;">&#x00A0;</div>
-<div style="margin-left: 5.00ex;">\usepackage{hyperref}
+<div class="Pp"></div>
+<div class="Bd-indent">\usepackage{hyperref}
 <div>&#x00A0;</div>
 \href{run:&lt;movie file&gt;}{&lt;placeholder content&gt;}</div>
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 The movie will playback in the area taken by the placeholder content. Using a
   frame of the movie will ensure the correct aspect ratio.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 See our website &#x27E8;URL: http://pdfpc.github.io/demo/pdfpc-video-example.zip
   &#x27E9; for a full example.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 See the bugs section for further information.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h2 class="Ss" title="Ss" id="Pointer_mode"><a class="selflink" href="#Pointer_mode">Pointer
+<div class="Pp"></div>
+<h2 class="Ss" title="Ss" id="Pointer_mode"><a class="permalink" href="#Pointer_mode">Pointer
   mode</a></h2>
 If needed, it is possible to turn on a pointer which draws a red dot in the
   place pointed by mouse cursor on both - presenter and presentation screens. It
@@ -527,29 +543,29 @@ If needed, it is possible to turn on a pointer which draws a red dot in the
   the pointer is enabled, it is possible to highlight some area of the current
   slide using the drag mouse motion. The area outside the selected region will
   be dimmed.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h2 class="Ss" title="Ss" id="Drawing_mode"><a class="selflink" href="#Drawing_mode">Drawing
+<div class="Pp"></div>
+<h2 class="Ss" title="Ss" id="Drawing_mode"><a class="permalink" href="#Drawing_mode">Drawing
   mode</a></h2>
 It is possible to turn on a mode which allows drawing over slides with the mouse
   cursor or a connected tablet. When drawing mode is enabled, drawings can be
   made on the presenter screen. A separate drawing will be kept in memory for
   each slide (based on user slide numbers, so consolidating overlay slides).
   Drawings are presently not saved between sessions.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 In the drawing mode, there are two drawing tools, a pen and an eraser. An
   indicator in the bottom-left corner of the presenter screen will indicate
   which is active. When in the pen mode, the color and size of the pen will be
   indicated by the cursor. The pen size can be increased or decreased using hot
   keys specified in the key bindings. When the eraser tool is active, the size
   of the cursor indicates the amount to erase.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 The color of the pen can be changed through key or mouse bindings.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 If you are using a tablet, the pen or eraser tool will be selected based on
   whether the tablet reports a pen or eraser input device is being used,
   overriding the normal selection of the drawing tool.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h2 class="Ss" title="Ss" id="pdfpc_files"><a class="selflink" href="#pdfpc_files">pdfpc
+<div class="Pp"></div>
+<h2 class="Ss" title="Ss" id="pdfpc_files"><a class="permalink" href="#pdfpc_files">pdfpc
   files</a></h2>
 Some additional information is stored in a file with the extension
   &quot;pdfpc&quot;. When pdfpc is invoked with a PDF file, it automatically
@@ -558,27 +574,27 @@ Some additional information is stored in a file with the extension
 <div class="Pp"></div>
 Beside internal configuration, the following command-line options are stored
   within the pdfpc file for later usage:
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <dl class="Bl-tag">
-  <dt class="It-tag">&#x2022;</dt>
-  <dd class="It-tag">duration</dd>
+  <dt>&#x2022;</dt>
+  <dd>duration</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag">&#x2022;</dt>
-  <dd class="It-tag">end_time</dd>
+  <dt>&#x2022;</dt>
+  <dd>end_time</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag">&#x2022;</dt>
-  <dd class="It-tag">last_minutes</dd>
+  <dt>&#x2022;</dt>
+  <dd>last_minutes</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag">&#x2022;</dt>
-  <dd class="It-tag">notes (position)</dd>
+  <dt>&#x2022;</dt>
+  <dd>notes (position)</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag">&#x2022;</dt>
-  <dd class="It-tag">start_time
-    <div style="height: 1.00em;">&#x00A0;</div>
+  <dt>&#x2022;</dt>
+  <dd>start_time
+    <div class="Pp"></div>
   </dd>
 </dl>
 <div class="Pp"></div>
@@ -586,73 +602,84 @@ There are, however, cases where you may want to edit this file manually. The
   most typical case is if you add or remove some slides after you have edited
   notes or defined overlays. It may be quicker to edit the pdfpc file than to
   re-enter the whole information.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 There is also the possibility of including notes from a different file. If pdfpc
   encounters a [notes_include] section with the .pdfpc file it reads the notes
   <b>only</b> from the included file. Changing notes within pdfpc is then
   forbidden.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 The files are plain-text files that should be fairly self-explanatory. A couple
   of things to note:
 <dl class="Bl-tag">
-  <dt class="It-tag">&#x2022;</dt>
-  <dd class="It-tag">The slide numbers of the notes refer to user slides</dd>
+  <dt>&#x2022;</dt>
+  <dd>The slide numbers of the notes refer to user slides</dd>
 </dl>
 <dl class="Bl-tag">
-  <dt class="It-tag">&#x2022;</dt>
-  <dd class="It-tag">Slide indexes start at 1
-    <div style="height: 1.00em;">&#x00A0;</div>
+  <dt>&#x2022;</dt>
+  <dd>Slide indexes start at 1
+    <div class="Pp"></div>
   </dd>
 </dl>
-<h2 class="Ss" title="Ss" id="Appearance"><a class="selflink" href="#Appearance">Appearance</a></h2>
+<h2 class="Ss" title="Ss" id="Appearance"><a class="permalink" href="#Appearance">Appearance</a></h2>
 With GTK3 it is possible to modify the appearance of pdfpc. There are two
   locations where pdfpc is looking for files. The default location is
   @CMAKE_INSTALL_PREFIX@/share/pixmaps/pdfpc/pdfpc.css. It can be copied to
   $XDG_CONFIG_HOME/pdfpc/pdfpc.css and modified to the user's liking.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h2 class="Ss" title="Ss" id="Integration_with_other_tools"><a class="selflink" href="#Integration_with_other_tools">Integration
-  with other tools</a></h2>
-Pdfpc provides a dbus interface that other tools can use to execute any action
-  listed by <b>--list-actions</b>. The interface appears on the session bus as
-  <i> io.github.pdfpc</i>.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h1 class="Sh" title="Sh" id="BUGS"><a class="selflink" href="#BUGS">BUGS</a></h1>
+<div class="Pp"></div>
+<h2 class="Ss" title="Ss" id="Desktop_integration"><a class="permalink" href="#Desktop_integration">Desktop
+  integration</a></h2>
+Pdfpc provides a DBus interface that appears on the session bus as
+  <i>io.github.pdfpc</i>. Other applications can, in particular, execute any
+  action listed by <b>--list-actions</b>. It is also possible to control pdfpc
+  from the command line (and write shell scripts) using the <b>dbus-send</b>(1)
+  utility. For example, to advance to the next slide, run
+<div class="Pp"></div>
+dbus-send --type=method_call --session --dest=io.github.pdfpc
+<br/>
+ /io/github/pdfpc io.github.pdfpc.TriggerAction string:next
+<div class="Pp"></div>
+In addition to the <b>TriggerAction</b> method, the pdfpc DBus interface exposes
+  the <b>GetNotes</b> method, three properties (<b>NumberOfOverlays</b>,
+  <b>NumberOfSlides</b>, <b>Url</b>) and two signals (<b>OverlayChange</b> and
+  <b>SlideChange</b>).
+<div class="Pp"></div>
+<h1 class="Sh" title="Sh" id="BUGS"><a class="permalink" href="#BUGS">BUGS</a></h1>
 Bugs can be reported at our issue tracker &#x27E8;URL:
   https://github.com/pdfpc/pdfpc/issues &#x27E9;.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <div class="Pp"></div>
 The LaTeX package &quot;hyperref&quot; produces buggy results when using with
   beamer notes. It is recommended to use the &quot;multimedia&quot; package
   instead.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h1 class="Sh" title="Sh" id="ACKNOWLEDGEMENTS"><a class="selflink" href="#ACKNOWLEDGEMENTS">ACKNOWLEDGEMENTS</a></h1>
+<div class="Pp"></div>
+<h1 class="Sh" title="Sh" id="ACKNOWLEDGEMENTS"><a class="permalink" href="#ACKNOWLEDGEMENTS">ACKNOWLEDGEMENTS</a></h1>
 pdfpc was previously developed by davvil &#x27E8;URL:
   https://github.com/davvil/pdfpc &#x27E9;.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 pdfpc is a fork of Pdf Presenter Console, available online &#x27E8;URL:
   https://github.com/jakobwesthoff/Pdf-Presenter-Console &#x27E9;.
-<div style="height: 1.00em;">&#x00A0;</div>
-<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="selflink" href="#SEE_ALSO">SEE
+<div class="Pp"></div>
+<h1 class="Sh" title="Sh" id="SEE_ALSO"><a class="permalink" href="#SEE_ALSO">SEE
   ALSO</a></h1>
-pdfpcrc(5)
-<div style="height: 1.00em;">&#x00A0;</div>
+<b>pdfpcrc</b>(5)
+<div class="Pp"></div>
 There are several other programs with similar functionality.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <b>impressive</b>(1) has nice transition effects.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <b>hpdfp</b>(1) is the Haskell PDF Presenter &#x27E8;URL:
   http://michaeldadams.org/projects/haskell-pdf-presenter/ &#x27E9; program,
   which packs an amazing level of functionality into not many lines of Haskell.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <b>pympress</b>(1) is a little PDF reader written in Python &#x27E8;URL:
   https://github.com/Cimbali/pympress &#x27E9; which handles dual screens and
   beamer notes.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 <b>dspdfviewer</b>(1) is also specialized for beamer-produced wide PDF with
   notes.
-<div style="height: 1.00em;">&#x00A0;</div>
+<div class="Pp"></div>
 Many PDF viewers have full-screen presentation modes, but without dual-monitor
   preview or notes or a timer. These include <b>zathura</b>(1),
   <b>evince</b>(1), and <b>okular</b>(1).</div>
