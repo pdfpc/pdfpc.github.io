@@ -40,7 +40,7 @@
 
 \begin{frame}
   \frametitle{Starting up}
-  Hi! Welcome to the demo of \pdfpc, a pdf presentation tool.
+  Hi! Welcome to the demo of \pdfpc, a PDF presentation tool.
   \begin{block}{Setting up}
     I assume you have opened this presentation with \pdfpc itself. You may have
     one of these cases:
@@ -52,9 +52,13 @@
         swapped
           \singleitem{restart \pdfpc with the \opt{-s} option}
       \item You are viewing this on a single monitor
-          \singleitem{you are currently on the presenter view. You can get a
-          good feeling of what \pdfpc is good for, but you will have to take
-          my word for some of the features}
+        \begin{itemize}
+          \item you are currently on the presenter view. You can get a
+            good feeling of what \pdfpc is good for, but you will have to take
+            my word for some of the features
+          \item alternatively, restart \pdfpc in the windowed mode with the
+            \opt{-w} option
+        \end{itemize}
     \end{itemize}
   \end{block}
 \end{frame}
@@ -77,16 +81,12 @@
   \frametitle{Basic movement}
   \begin{itemize}
     \item You probably have guessed by now, but for moving forward you can use
-      one of \RArrow, \PgDown, \Return (Enter), \Spacebar (space bar) and the left mouse
-      button
-
-      \alert{Important:} Do not use \DArrow (yet!) for moving forward
-    \item Likewise you can use \LArrow, \PgUp or the right mouse button for
-      going back
-
-      \alert{Important:} Do not use \UArrow (yet!) for moving backwards
-    \item Pressing shift in addition to one of the previous keys
-      causes the movement to jump in 10-slide steps.
+      one of \RArrow, \DArrow, \PgDown, \Return (Enter), \Spacebar (space bar)
+      and the left mouse button
+    \item Likewise you can use \LArrow, \UArrow, \PgUp, \BSpace (backspace) or
+      the right mouse button for going back
+    \item Pressing \Shift together with \RArrow or \LArrow causes the movement
+      to jump in 10-slide steps forward or backward, respectively
   \end{itemize}
 \end{frame}
 
@@ -103,11 +103,11 @@
     \pause
     \item Note also that the slide counter shows the correct slide number
     \pause
-    \item The 10-jump slides mentioned in the previous slide also support
+    \item The 10-jump keys mentioned in the previous slide also support
       overlays
     \pause
     \item If you are fed up with this overlay, you can jump to the next slide
-      with \DArrow
+      with \Shift+\PgDown
     \pause
     \item Really you should skip to the next slide now
     \pause
@@ -127,21 +127,20 @@
   \frametitle{More on overlays}
   \begin{block}{Movement}
     \begin{itemize}
-      \item Normal movement while \emph{inside} an overlay jumps through each step
-        in the overlay
-      \item Movement backwards \emph{outside} of an overlay jumps to the beginning
-        of the overlay
-        \singleitem{e.g.\ press \PgUp now}
-      \item \UArrow and \DArrow jump to the previous and next slide respectively,
-        ignoring overlay steps
+      \item Normal movement while \emph{inside} an overlay jumps through each
+        step in the overlay
+      \item \Shift+\PgUp and \Shift+\PgDown jump to the previous and next slide
+        respectively, ignoring overlay steps
+      \item \Shift+\UArrow and \Shift+\DArrow jump to the beginning and end
+        of the current overlay
     \end{itemize}
   \end{block}
   \begin{block}{Definition of overlays}
     \begin{itemize}
       \item \pdfpc tries to find the overlay information automatically by
         looking at the page numbers
-      \item If automatic detection does not work, you can define overlays with
-        \keystroke{O} on every slide composing an overlay
+      \item If the automatic detection does not work, you can define overlays
+        with \Ctrl+\keystroke{O} on every slide composing an overlay
     \end{itemize}
   \end{block}
 \end{frame}
@@ -150,10 +149,10 @@
   \frametitle{Jumping to specific slides}
   \begin{itemize}
     \item Pressing \keystroke{G} you can enter a slide number to jump to
-      \singleitem{To come back to this slide you can use the \BSpace (backspace) key or remember that we are on slide \insertframenumber.}
+      \singleitem{To come back to this slide you can use the \Shift+\BSpace
+        combination or remember that we are on slide \insertframenumber.}
     \item Pressing \Tab (Tab) you get an overview of the whole presentation,
-      which you can use to jump around (note that only the first overlay slide
-      is shown in the overview!)
+      which you can use to jump around
     \item Hyperlinks also work, press \hyperlink{titlePage}{here to jump to the
       first slide}
     \item \Home and \End also work as expected
@@ -163,7 +162,7 @@
 \begin{frame}
   \frametitle{Notes}
   \begin{itemize}
-    \item Pressing \keystroke{N} you can annotate slides (text only)
+    \item Pressing \Ctrl+\keystroke{N} you can annotate slides (text only)
       \singleitem{Try it now!}
     \item Pressing \Esc exits the note editing mode
     \item The notes are stored automatically
@@ -190,11 +189,11 @@
   \begin{itemize}
     \item With \keystroke{S} you can start the clock at the beginning of the
       presentation
-      \singleitem{Note that the clock also starts automatically when moving slides}
+      \singleitem{Note that the clock also starts automatically when moving
+        slides}
     \item With \keystroke{P} you can pause the clock
       \singleitem{Useful for rehearsal talks}
-    \item With \keystroke{R} you can reset the presentation
-      \singleitem{i.e.\ set the clock to 0 and jump to the first slide}
+    \item With \Ctrl+\keystroke{T} you can reset the timer
   \end{itemize}
 \end{frame}
 
@@ -203,20 +202,21 @@
   \begin{itemize}
     \item Some people like having support slides after their ``last'' slide
       \singleitem{Advanced topics, bibliography, expected questions, etc.}
-    \item Pressing \keystroke{E} you can define this to be the end slide in the
-      presentation
-      \singleitem{The slide count in the presenter view gets updated, to give you
-      a better overview of how many slides are left}
+    \item Pressing \Ctrl+\keystroke{E} you can define this to be the end slide
+      in the presentation
+      \singleitem{The slide count in the presenter view gets updated, to give
+        you a better overview of how many slides are left}
       \singleitem{It also updates the slide you jump to when pressing \End}
-    \item For exiting, press \keystroke{Q} or \Esc
+    \item For exiting, press \Ctrl+\keystroke{Q}
   \end{itemize}
   \vfill
   \begin{center}
     THE END
   \end{center}
   \vfill
-  {\footnotesize There are a couple of slides more with some additional information,
-  but we do not want to show them to the audience if they do not ask for them}
+  {\footnotesize There are a couple of slides more with some additional
+    information, but we do not want to show them to the audience if they do not
+    ask for them}
 \end{frame}
 
 \begin{frame}
@@ -226,7 +226,7 @@
       notes, end slide, etc.) is stored in an additional file with extension
       \opt{.pdfpc}
     \item Most of the time this file is automatically handled
-    \item If you ever need to do changes by hand (e.g.\ if you modify the pdf
+    \item If you ever need to do changes by hand (e.g.\ if you modify the PDF
       after defining the meta-information) it is a text-based format easy to
       edit
   \end{itemize}
@@ -236,7 +236,8 @@
   \frametitle{Acknowledgements}
   \begin{itemize}
     \item \pdfpc is a fork of pdf-presenter-console
-      ({\footnotesize \verb+http://westhoffswelt.de/projects/pdf_presenter_console.html+})
+      ({\footnotesize
+        \verb+http://westhoffswelt.de/projects/pdf_presenter_console.html+})
     \item Many thanks to Jakob Westhoff, the original author!
   \end{itemize}
 \end{frame}
