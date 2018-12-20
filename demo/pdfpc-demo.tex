@@ -3,7 +3,7 @@
 \usepackage{calc}
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
-\usepackage{keystroke}
+\usepackage[os=win]{menukeys}
 \usepackage{xspace}
 
 \useoutertheme{shadow}
@@ -81,12 +81,15 @@
   \frametitle{Basic movement}
   \begin{itemize}
     \item You probably have guessed by now, but for moving forward you can use
-      one of \RArrow, \DArrow, \PgDown, \Return (Enter), \Spacebar (space bar)
-      and the left mouse button
-    \item Likewise you can use \LArrow, \UArrow, \PgUp, \BSpace (backspace) or
-      the right mouse button for going back
-    \item Pressing \Shift together with \RArrow or \LArrow causes the movement
-      to jump in 10-slide steps forward or backward, respectively
+      one of \keys{\arrowkeyright}, \keys{\arrowkeydown}, \keys{Page
+      \arrowkeydown}, \keys{\return} (Enter/Return), \keys{\SPACE}, and the left
+      mouse button
+    \item Likewise you can use \keys{\arrowkeyleft}, \keys{\arrowkeyup},
+      \keys{Page \arrowkeyup}, \keys{\backspace} (Backspace) or the right mouse
+      button for going back
+    \item Pressing \keys{\shift} (Shift) together with \keys{\arrowkeyright} or
+      \keys{\arrowkeyleft} causes the movement to jump in 10-slide steps forward
+      or backward, respectively
   \end{itemize}
 \end{frame}
 
@@ -107,7 +110,7 @@
       overlays
     \pause
     \item If you are fed up with this overlay, you can jump to the next slide
-      with \Shift+\PgDown
+      with \keys{\shift+Page \arrowkeydown}
     \pause
     \item Really you should skip to the next slide now
     \pause
@@ -129,10 +132,10 @@
     \begin{itemize}
       \item Normal movement while \emph{inside} an overlay jumps through each
         step in the overlay
-      \item \Shift+\PgUp and \Shift+\PgDown jump to the previous and next slide
-        respectively, ignoring overlay steps
-      \item \Shift+\UArrow and \Shift+\DArrow jump to the beginning and end
-        of the current overlay
+      \item \keys{\shift+Page \arrowkeyup} and \keys{\shift+Page \arrowkeydown}
+        jump to the previous and next slide respectively, ignoring overlay steps
+      \item \keys{\shift+\arrowkeyup} and \keys{\shift+\arrowkeydown} jump to
+        the beginning and end of the current overlay
     \end{itemize}
   \end{block}
   \begin{block}{Definition of overlays}
@@ -140,7 +143,7 @@
       \item \pdfpc tries to find the overlay information automatically by
         looking at the page numbers
       \item If the automatic detection does not work, you can define overlays
-        with \Ctrl+\keystroke{O} on every slide composing an overlay
+        with \keys{\ctrl+O} on every slide composing an overlay
     \end{itemize}
   \end{block}
 \end{frame}
@@ -148,23 +151,24 @@
 \begin{frame}
   \frametitle{Jumping to specific slides}
   \begin{itemize}
-    \item Pressing \keystroke{G} you can enter a slide number to jump to
-      \singleitem{To come back to this slide you can use the \Shift+\BSpace
-        combination or remember that we are on slide \insertframenumber.}
-    \item Pressing \Tab (Tab) you get an overview of the whole presentation,
-      which you can use to jump around
+    \item Pressing \keys{G} you can enter a slide number to jump to
+      \singleitem{To come back to this slide you can use the
+        \keys{\shift+\backspace} combination or remember that we are on slide
+        \insertframenumber.}
+    \item Pressing \keys{\tab} (Tab) you get an overview of the whole
+      presentation, which you can use to jump around
     \item Hyperlinks also work, press \hyperlink{titlePage}{here to jump to the
       first slide}
-    \item \Home and \End also work as expected
+    \item \keys{Home} and \keys{End} also work as expected
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Notes}
   \begin{itemize}
-    \item Pressing \Ctrl+\keystroke{N} you can annotate slides (text only)
+    \item Pressing \keys{\ctrl+N} you can annotate slides (text only)
       \singleitem{Try it now!}
-    \item Pressing \Esc exits the note editing mode
+    \item Pressing \keys{\esc} exits the note editing mode
     \item The notes are stored automatically
     \item The notes apply to all the slides in an overlay
   \end{itemize}
@@ -173,19 +177,19 @@
 \begin{frame}
   \frametitle{Controlling the presentation view}
     \begin{itemize}
-      \item Pressing \keystroke{F} you can freeze the presentation view, i.e.\
+      \item Pressing \keys{F} you can freeze the presentation view, i.e.\
         slide movement does not reflect on the presentation view
         \singleitem{This is useful if you want to search for some slide without
           confusing the audience with quick slide flipping}
-      \item Pressing \keystroke{B} you can fade to black the presentation view
+      \item Pressing \keys{B} you can fade to black the presentation view
         \singleitem{This is useful e.g.\ if you are using slides and a
           blackboard at the same time}
-      \item Pressing \keystroke{H} will entirely hide the presentation view
+      \item Pressing \keys{H} will entirely hide the presentation view
         \singleitem{This can be useful for showing a different application
           during the presentation}
-      \item Pressing again any of the \keystroke{F}, \keystroke{B}, or
-        \keystroke{H} keys undoes the respective presentation view change.
-        Alternatively, hit \Esc to return to the regular state
+      \item Pressing again any of the \keys{F}, \keys{B} or
+        \keys{H} keys undoes the respective presentation view change.
+        Alternatively, hit \keys{\esc} to return to the regular state
       \item The presenter view shows some icons reflecting the current status
     \end{itemize}
 \end{frame}
@@ -193,13 +197,13 @@
 \begin{frame}
   \frametitle{Controlling the clock}
   \begin{itemize}
-    \item With \keystroke{S} you can start the clock at the beginning of the
+    \item With \keys{S} you can start the clock at the beginning of the
       presentation
       \singleitem{Note that the clock also starts automatically when moving
         slides}
-    \item With \keystroke{P} you can pause the clock
+    \item With \keys{P} you can pause the clock
       \singleitem{Useful for rehearsal talks}
-    \item With \Ctrl+\keystroke{T} you can reset the timer
+    \item With \keys{\ctrl+T} you can reset the timer
   \end{itemize}
 \end{frame}
 
@@ -208,12 +212,13 @@
   \begin{itemize}
     \item Some people like having support slides after their ``last'' slide
       \singleitem{Advanced topics, bibliography, expected questions, etc.}
-    \item Pressing \Ctrl+\keystroke{E} you can define this to be the end slide
+    \item Pressing \keys{\ctrl+E} you can define this to be the end slide
       in the presentation
       \singleitem{The slide count in the presenter view gets updated, to give
         you a better overview of how many slides are left}
-      \singleitem{It also updates the slide you jump to when pressing \End}
-    \item For exiting, press \Ctrl+\keystroke{Q}
+      \singleitem{It also updates the slide you jump to when pressing
+        \keys{End}}
+    \item For exiting, press \keys{\ctrl+Q}
   \end{itemize}
   \vfill
   \begin{center}
