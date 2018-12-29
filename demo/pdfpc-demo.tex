@@ -27,7 +27,8 @@
 \mode<presentation>
 
 \title{\pdfpc demo}
-\author[D. Vilar]{David Vilar \\ \texttt{davvil@gmail.com}}
+\author[D. Vilar]{David Vilar \\ \texttt{davvil@gmail.com} \\
+                  Updated by E. Stambulchik}
 \date{\today}
 \institute{}
 
@@ -155,8 +156,10 @@
       \singleitem{To come back to this slide you can use the
         \keys{\shift+\backspace} combination or remember that we are on slide
         \insertframenumber.}
-    \item Pressing \keys{\tab} (Tab) you get an overview of the whole
-      presentation, which you can use to jump around
+    \item Pressing \keys{\tab} (Tab) or the middle mouse button you get an
+      overview of the whole presentation, which you can use to jump around
+    \item Press \keys{M} to bookmark a present slide; press \keys{\shift+M} to
+      return to it afterwards
     \item Hyperlinks also work, press \hyperlink{titlePage}{here to jump to the
       first slide}
     \item \keys{Home} and \keys{End} also work as expected
@@ -208,6 +211,47 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Annotation modes}
+  \begin{itemize}
+    \item \pdfpc has a built-in ``laser'' pointer. To switch the pointer
+      mode on, press \keys{2}
+      \begin{itemize}
+        \item The pointer size can be adjusted with the \keys{{+}} and \keys{-}
+          keys
+        \item A rectangular area can be highlighted by using the drag mouse
+          motion
+      \end{itemize}
+    \item Press \keys{3} to enter the drawing mode with the pen tool selected
+      \singleitem{Again, use \keys{{+}} and \keys{-} to alter the size of the
+        drawing tool}
+    \item Press \keys{4} to use the eraser tool, if needed
+      \singleitem{Or you can clear the entire current-page drawing with
+        \keys{C}}
+    \item Press \keys{1} to return to the normal presentation mode
+    \item The drawings will stay on the slides you made them
+      \singleitem{Press \keys{D} to toggle them on/off globally}
+    \item The drawings will \alert{not} be saved when you exit \pdfpc
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Toolbox}
+  Overwhelmed with the key bindings to memorize? Fear not!
+  \begin{itemize}
+    \item Press \keys{T} to invoke the toolbox
+      \singleitem{On tablet devices, it is enabled by default}
+    \item Use its handle to drag around the screen
+    \item The first button minimizes/restores the toolbox
+    \item The next four buttons switch between the normal, pointer, pen, and
+      eraser modes
+      \singleitem{In the drawing modes, more controls will appear -- the size
+        and color selectors}
+    \item Then come the toggles to freeze, fade to black or hide the
+      presentation view, and pause/restart the timer
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
   \frametitle{Finishing}
   \begin{itemize}
     \item Some people like having support slides after their ``last'' slide
@@ -218,7 +262,7 @@
         you a better overview of how many slides are left}
       \singleitem{It also updates the slide you jump to when pressing
         \keys{End}}
-    \item For exiting, press \keys{\ctrl+Q}
+    \item To exit press \keys{\ctrl+Q}
   \end{itemize}
   \vfill
   \begin{center}
