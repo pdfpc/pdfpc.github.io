@@ -1,0 +1,20 @@
+# Suffixes
+.SUFFIXES : .tex .pdf
+
+# Executables
+PDFLATEX = pdflatex
+
+# Rules
+.tex.pdf :
+	$(PDFLATEX) $< && $(PDFLATEX) $<
+
+# Config
+DEMO  = pdfpc-demo
+
+PDFDOCS = $(DEMO).pdf
+
+# Targets
+all : $(PDFDOCS)
+
+clean :
+	$(RM) $(PDFDOCS) *.aux *.log *.toc *.nav *.out *.snm *.vrb
