@@ -4,6 +4,8 @@
 # Executables
 PDFLATEX = pdflatex
 
+RM = rm -f
+
 # Rules
 .tex.pdf :
 	$(PDFLATEX) $< && $(PDFLATEX) $<
