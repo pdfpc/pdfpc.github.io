@@ -11,7 +11,7 @@ RM = rm -f
 	$(PDFLATEX) $< && $(PDFLATEX) $<
 
 # Config
-DEMO  = pdfpc-demo
+DEMO  = video-example
 
 PDFDOCS = $(DEMO).pdf
 
