@@ -70,7 +70,7 @@ The most relevant features of pdfpc are:
 * Video playback support
 
 To get a better feeling of pdfpc, install it, download the [demo
-presentation](demo/demo/pdfpc-demo.pdf) and start it with
+presentation](demo/pdfpc-demo.pdf) and start it with
 
 {% highlight bash %}
 $ pdfpc pdfpc-demo.pdf
