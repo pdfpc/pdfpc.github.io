@@ -5,7 +5,8 @@ baseurl: ""
 url: ""
 github_username: pdfpc
 repository: pdfpc/pdfpc
-
+github:
+    repository_url: https://github.com/pdfpc/pdfpc
 markdown: kramdown
 theme: jekyll-theme-slate
 
