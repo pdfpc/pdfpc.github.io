@@ -15,19 +15,23 @@ presentation software.
 
 ### Screenshots
 
+<center>
 <figure>
   <a href="{{ site.url }}/screenshots/pdfpc-presenter.png">
   <img src="{{site.url}}/screenshots/pdfpc-presenter-small.png" alt="Presenter view of pdfpc"/>
   </a>
   <figcaption>Presenter view, showing the current and next slides, remaining time, notes and some additional information.</figcaption>
 </figure>
+</center>
 
+<center>
 <figure>
   <a href="{{ site.url }}/screenshots/pdfpc-overview.png">
   <img src="{{site.url}}/screenshots/pdfpc-overview-small.png" alt="Overview of pdfpc"/>
   </a>
   <figcaption>Overview mode showing all the slides in the presentation</figcaption>
 </figure>
+</center>
 
 
 ### News
