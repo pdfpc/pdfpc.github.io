@@ -1,0 +1,11 @@
+title: pdfpc
+description: >-
+  A presenter console with multi-monitor support for PDF files
+baseurl: ""
+url: ""
+github_username: pdfpc
+repository: pdfpc/pdfpc
+
+markdown: kramdown
+theme: jekyll-theme-slate
+
