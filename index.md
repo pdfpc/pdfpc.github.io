@@ -36,6 +36,7 @@ presentation software.
 
 ### News
 
+* February 2020: pdfpc 4.4.0 release
 * June 2019: pdfpc 4.3.4 release
 * June 2019: pdfpc 4.3.3 release
 * February 2019: pdfpc 4.3.2 release
@@ -74,13 +75,13 @@ The most relevant features of pdfpc are:
 * Video playback support
 
 To get a better feeling of pdfpc, install it, download the [demo
-presentation](https://github.com/pdfpc/pdfpc/releases/download/v4.3.0/pdfpc-demo.pdf) and start it with
+presentation](https://github.com/pdfpc/pdfpc/releases/latest/download/pdfpc-demo.pdf) and start it with
 
 {% highlight bash %}
 $ pdfpc pdfpc-demo.pdf
 {% endhighlight %}
 
-or try [an example with movies](https://github.com/pdfpc/pdfpc/releases/download/v4.3.0/pdfpc-video-example.zip) and start it with
+or try [an example with movies](https://github.com/pdfpc/pdfpc/releases/latest/download/pdfpc-video-example.zip) and start it with
 
 {% highlight bash %}
 $ pdfpc video-example.pdf
