@@ -36,6 +36,7 @@ presentation software.
 
 ### News
 
+* November 2020: pdfpc 4.4.1 release
 * February 2020: pdfpc 4.4.0 release
 * June 2019: pdfpc 4.3.4 release
 * June 2019: pdfpc 4.3.3 release
