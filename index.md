@@ -18,7 +18,7 @@ presentation software.
 <center>
 <figure>
   <a href="{{ site.url }}/screenshots/pdfpc-presenter.png">
-  <img src="{{site.url}}/screenshots/pdfpc-presenter-small.png" alt="Presenter view of pdfpc"/>
+  <img src="{{ site.url }}/screenshots/pdfpc-presenter-small.png" alt="Presenter view of pdfpc"/>
   </a>
   <figcaption>Presenter view, showing the current and next slides, remaining time, notes and some additional information.</figcaption>
 </figure>
@@ -27,7 +27,7 @@ presentation software.
 <center>
 <figure>
   <a href="{{ site.url }}/screenshots/pdfpc-overview.png">
-  <img src="{{site.url}}/screenshots/pdfpc-overview-small.png" alt="Overview of pdfpc"/>
+  <img src="{{ site.url }}/screenshots/pdfpc-overview-small.png" alt="Overview of pdfpc"/>
   </a>
   <figcaption>Overview mode showing all the slides in the presentation</figcaption>
 </figure>
@@ -36,6 +36,7 @@ presentation software.
 
 ### News
 
+* December 2020: pdfpc 4.5.0 release
 * November 2020: pdfpc 4.4.1 release
 * February 2020: pdfpc 4.4.0 release
 * June 2019: pdfpc 4.3.4 release
